@@ -862,11 +862,13 @@ export default function Page() {
         style={{
           position: 'relative', zIndex: 1,
           minHeight: '100vh',
-          display: 'flex', alignItems: 'stretch',
+          display: 'flex', flexDirection: 'column', alignItems: 'stretch',
           paddingTop: 68,
           overflow: 'hidden',
         }}
       >
+        {/* Top row: left content + right photo */}
+        <div style={{ display: 'flex', alignItems: 'stretch', flex: '1 1 auto' }}>
         {/* ── LEFT COLUMN ── */}
         <div style={{
           flex: '1 1 0',
@@ -958,21 +960,6 @@ export default function Page() {
             </a>
           </motion.div>
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.82, duration: 0.7 }}
-            className="stats-grid"
-            style={{
-              display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
-              borderRadius: 20, overflow: 'hidden',
-              border: `1px solid ${T.border}`, background: T.surface,
-              width: '100%',
-            }}
-          >
-            {STATS.map((s, i) => <StatItem key={i} {...s} index={i} />)}
-          </motion.div>
         </div>
 
         {/* ── RIGHT COLUMN — editorial portrait card ── */}
@@ -987,7 +974,7 @@ export default function Page() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '80px 48px 80px 24px',
+            padding: '40px 16px 80px 0px',
             position: 'relative',
           }}
         >
@@ -1129,6 +1116,22 @@ export default function Page() {
               <div style={{ fontSize: 10, color: T.muted, fontFamily: "'JetBrains Mono', monospace", marginTop: 3 }}>50+ projects delivered</div>
             </div>
           </motion.div>
+        </motion.div>
+        </div>{/* end top row */}
+
+        {/* Stats — full width bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.82, duration: 0.7 }}
+          className="stats-grid"
+          style={{
+            display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
+            borderTop: `1px solid ${T.border}`, background: T.surface,
+            width: '100%',
+          }}
+        >
+          {STATS.map((s, i) => <StatItem key={i} {...s} index={i} />)}
         </motion.div>
       </section>
 
