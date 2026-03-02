@@ -969,12 +969,12 @@ export default function Page() {
           transition={{ delay: 0.25, duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
           className="hero-photo-col"
           style={{
-            flex: '0 0 clamp(320px, 38vw, 520px)',
+            flex: '0 0 clamp(280px, 33vw, 420px)',
             alignSelf: 'stretch',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            padding: '40px 16px 80px 0px',
+            justifyContent: 'flex-start',
+            padding: '40px 0 80px 0',
             position: 'relative',
           }}
         >
@@ -1033,7 +1033,7 @@ export default function Page() {
 
               {/* Skill pills row */}
               <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 14 }}>
-                {['C# .NET', 'React', 'Azure', 'SQL'].map((s, i) => (
+                {['.NET 8', 'ASP.NET', 'Azure', 'React'].map((s, i) => (
                   <span key={i} style={{
                     fontSize: 9, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace",
                     letterSpacing: '0.08em', padding: '4px 9px', borderRadius: 20,
@@ -1061,10 +1061,10 @@ export default function Page() {
 
           {/* Floating skill badges — positioned relative to the column, outside card */}
           {[
-            { label: 'C# / .NET 8', icon: '⬡', color: T.lime,    top: '18%', left: '-8%'  },
-            { label: 'Azure',       icon: '☁', color: T.coral,   top: '32%', right: '-4%', left: undefined },
-            { label: 'React',       icon: '⚛', color: T.cyan,    top: '55%', right: '-4%', left: undefined },
-            { label: 'Docker',      icon: '⬢', color: '#a78bfa', top: '68%', left: '-8%'  },
+            { label: 'ASP.NET Core', icon: '◈', color: T.lime,      top: '15%', left: '-5%'  },
+            { label: 'Azure DevOps', icon: '☁', color: T.coral,    top: '33%', right: '-1%', left: undefined },
+            { label: 'SignalR',      icon: '⚡', color: T.cyan,    top: '57%', right: '-1%', left: undefined },
+            { label: 'SQL Server',   icon: '⊞', color: '#a78bfa', top: '72%', left: '-5%'  },
           ].map((b, i) => (
             <motion.div
               key={i}
