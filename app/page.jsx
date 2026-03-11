@@ -1,5 +1,5 @@
 'use client';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+
 import { motion, useInView, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import { useRef, useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
@@ -41,31 +41,45 @@ const TECH_MARQUEE = [
 const SERVICES = [
   {
     num: '01',
-    title: 'Enterprise Backend',
-    desc: 'Scalable APIs, microservices architecture, and complex business logic built on battle-tested .NET. From greenfield builds to legacy modernization.',
-    tags: ['C# / .NET 8', 'ASP.NET Core', 'Web APIs', 'Microservices', 'SignalR'],
+    title: 'Custom Software & Web Apps',
+    desc: 'I build the software your business actually needs -- from scratch. Websites, internal tools, customer portals, SaaS platforms. If you can describe it, I can build it reliably and on time.',
+    tags: ['C# / .NET 8', 'ASP.NET Core', 'React', 'Next.js', 'REST APIs'],
     color: T.lime,
   },
   {
     num: '02',
-    title: 'Full-Stack Web Apps',
-    desc: 'End-to-end product development -- React/Next.js frontends backed by robust .NET APIs. Pixel-perfect UI meeting enterprise-grade reliability.',
-    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'REST'],
+    title: 'Business Systems & ERP',
+    desc: 'Replace spreadsheets and disconnected tools with one system that runs your business. Inventory, HR, finance, payroll, reporting -- all unified and automated for your team.',
+    tags: ['ERP / CRM', 'Payroll Systems', 'Workflow Automation', 'Reporting', 'SQL Server'],
     color: T.cyan,
   },
   {
     num: '03',
-    title: 'Cloud & DevOps',
-    desc: 'Azure architecture, CI/CD pipelines, containerization, and monitoring that keeps your product online and your team shipping fast.',
-    tags: ['Microsoft Azure', 'Azure DevOps', 'Docker', 'App Service', 'Azure Functions'],
+    title: 'Cloud Hosting & DevOps',
+    desc: 'Move your product to the cloud or keep it running faster and cheaper. I handle Azure setup, deployments, automated pipelines, and monitoring so you never worry about downtime.',
+    tags: ['Microsoft Azure', 'Azure DevOps', 'Docker', 'CI/CD Pipelines', 'Azure Functions'],
     color: T.coral,
   },
   {
     num: '04',
-    title: 'Data Engineering',
-    desc: 'Database design, query optimization, reporting systems, and data pipelines. Your data working as hard as your application.',
+    title: 'Database Design & Reporting',
+    desc: 'Your data should answer questions, not create them. I design fast, reliable databases and build reports and dashboards that give you real visibility into your business.',
     tags: ['SQL Server', 'PostgreSQL', 'Redis', 'SSRS Reports', 'ETL Pipelines'],
     color: '#a78bfa',
+  },
+  {
+    num: '05',
+    title: 'WordPress Development',
+    desc: 'Professional WordPress websites built properly -- custom themes, fast load times, SEO-ready structure, and easy for your team to manage. No bloated page builders or cookie-cutter templates.',
+    tags: ['WordPress', 'Custom Themes', 'PHP', 'SEO Optimisation', 'Performance'],
+    color: '#f59e0b',
+  },
+  {
+    num: '06',
+    title: 'QA Testing & Tech Support',
+    desc: 'Shipping broken software costs more than testing it first. I provide thorough QA testing, bug fixing, and ongoing technical support to keep your product stable and your users happy.',
+    tags: ['Software Testing', 'QA & Bug Fixing', 'Performance Testing', 'Tech Support', 'Code Review'],
+    color: '#34d399',
   },
 ];
 
@@ -84,11 +98,11 @@ const PROJECTS = [
   },
   {
     num: '02',
-    title: 'Enterprise Resource Platform',
-    category: 'ERP · Retail · Logistics',
+    title: 'All-in-One Business Management System',
+    category: 'ERP · Retail · Logistics · Manufacturing',
     impact: '99.9% uptime SLA',
-    desc: 'Bespoke ERP system unifying inventory, HR, finance, and analytics for clients across retail, manufacturing, and logistics. Modular micro-service architecture that scales with business growth.',
-    outcomes: ['Real-time analytics dashboard', 'Micro-service architecture', 'Role-based access control', '99.9% uptime maintained', 'Integrated third-party APIs'],
+    desc: 'A fully custom business management system built to replace scattered spreadsheets and disconnected tools. Inventory, HR, finance, and analytics unified into one platform -- serving clients across retail, manufacturing, and logistics.',
+    outcomes: ['Real-time analytics dashboard', 'Inventory & HR in one system', 'Role-based access control', '99.9% uptime maintained', 'Integrated third-party APIs'],
     tech: ['C#', '.NET', 'ASP.NET MVC', 'SQL Server', 'Azure DevOps'],
     color: T.cyan,
     gradient: 'linear-gradient(135deg, rgba(71,229,255,0.07) 0%, transparent 65%)',
@@ -108,10 +122,10 @@ const PROJECTS = [
   },
   {
     num: '04',
-    title: 'Freedom Business Daily',
+    title: 'News & Media Website -- WordPress Build',
     category: 'WordPress · Media · Publishing',
     impact: 'Live & scaling',
-    desc: 'Full WordPress development for a business news and media publication. Custom theme architecture, performance-optimised delivery, SEO-first content structure, and editorial workflow tooling built to handle a growing content team and readership.',
+    desc: 'Full WordPress website built for a business news and media publication -- Freedom Business Daily. Custom theme architecture, fast load times, SEO-first content structure, and a smooth editorial workflow for a growing team of writers and editors.',
     outcomes: ['Custom WordPress theme build', 'SEO-optimised site architecture', 'Editorial multi-author workflow', 'Performance-tuned delivery', 'Responsive across all devices'],
     tech: ['WordPress', 'PHP', 'Custom Theme', 'SEO', 'Performance'],
     color: '#f59e0b',
@@ -120,10 +134,10 @@ const PROJECTS = [
   },
   {
     num: '05',
-    title: 'Custom Business Website -- 110 Solutions',
-    category: 'Custom Dev · Agency · Web',
+    title: 'Corporate Website -- Built From Scratch, No Templates',
+    category: 'Custom Dev · Agency · Lead Generation',
     impact: 'Live production site',
-    desc: 'Custom-built corporate website for 110 Solutions, an Australian software agency. Bespoke frontend design paired with a hand-coded backend -- no templates, no page builders. Built for speed, brand credibility, and lead generation.',
+    desc: 'A fully hand-coded corporate website for 110 Solutions, an Australian software agency. No WordPress, no page builders -- every line custom written for speed, brand credibility, and converting visitors into leads.',
     outcomes: ['Fully custom design and build', 'No CMS or page-builder dependencies', 'Optimised for lead conversion', 'Cross-browser and device tested', 'Production-ready and maintained'],
     tech: ['ASP.NET', 'C#', 'HTML/CSS', 'JavaScript', 'Custom UI'],
     color: '#a78bfa',
@@ -688,6 +702,7 @@ export default function Page() {
           .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .services-grid > * { border-radius: 16px !important; }
+          /* services was 3-col desktop, 2-col tablet is already correct */
           .process-grid { grid-template-columns: 1fr 1fr !important; }
           .process-grid > * { border-right: none !important; border-bottom: 1px solid ${T.border} !important; }
           .exp-grid { grid-template-columns: 1fr !important; }
@@ -1189,12 +1204,12 @@ export default function Page() {
                 My Services
               </h2>
               <p style={{ fontSize: 16, color: T.muted, maxWidth: 400, lineHeight: 1.75, fontFamily: "'Bricolage Grotesque', sans-serif", letterSpacing: '0.01em' }}>
-                Eight years of deep specialization across the full .NET ecosystem -- from architecture to cloud deployment.
+                Eight years delivering across the full spectrum -- custom software, business systems, cloud, databases, WordPress, and QA.
               </p>
             </div>
           </motion.div>
 
-          <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
+          <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
             {SERVICES.map((s, i) => (
               <motion.div
                 key={i}
@@ -1713,10 +1728,9 @@ export default function Page() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4, marginBottom: 44 }}>
                 {[
-                  { icon: '✉', label: 'Email',           value: 'zaidi.dilawar110@gmail.com',          href: 'mailto:zaidi.dilawar110@gmail.com' },
-                  { icon: '📱', label: 'WhatsApp · Call', value: '+92 314-2103746',                      href: 'https://wa.me/923142103746' },
-                  { icon: '🔗', label: 'LinkedIn',        value: 'linkedin.com/in/dilawardeveloper',    href: 'https://www.linkedin.com/in/dilawardeveloper/' },
-                  { icon: '🌐', label: 'Company',         value: '110solutions.com.au',                 href: 'https://www.110solutions.com.au' },
+                  { icon: '✉', label: 'Email',           value: 'zaidi.dilawar110@gmail.com',       href: 'mailto:zaidi.dilawar110@gmail.com' },
+                  { icon: '📱', label: 'WhatsApp · Call', value: '+92 314-2103746',                   href: 'https://wa.me/923142103746' },
+                  { icon: '🔗', label: 'LinkedIn',        value: 'linkedin.com/in/dilawardeveloper', href: 'https://www.linkedin.com/in/dilawardeveloper/' },
                 ].map((c, i) => (
                   <motion.a
                     key={i}
@@ -1920,7 +1934,6 @@ export default function Page() {
                   { label: 'in',  href: 'https://www.linkedin.com/in/dilawardeveloper/', title: 'LinkedIn' },
                   { label: '✉',   href: 'mailto:zaidi.dilawar110@gmail.com',             title: 'Email' },
                   { label: 'wa',  href: 'https://wa.me/923142103746',                    title: 'WhatsApp' },
-                  { label: '110', href: 'https://www.110solutions.com.au',               title: '110 Solutions' },
                 ].map((s, i) => (
                   <a
                     key={i} href={s.href} title={s.title}
