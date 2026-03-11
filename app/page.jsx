@@ -16,7 +16,7 @@ const T = {
   cyan:    '#47e5ff',
   coral:   '#ff5757',
   text:    '#f0efe8',
-  muted:   'rgba(240,239,232,0.55)',   // FIX: bumped from 0.45 → 0.55 for WCAG AA contrast
+  muted:   'rgba(240,239,232,0.55)',
   faint:   'rgba(240,239,232,0.12)',
 };
 
@@ -49,7 +49,7 @@ const SERVICES = [
   {
     num: '02',
     title: 'Full-Stack Web Apps',
-    desc: 'End-to-end product development — React/Next.js frontends backed by robust .NET APIs. Pixel-perfect UI meeting enterprise-grade reliability.',
+    desc: 'End-to-end product development -- React/Next.js frontends backed by robust .NET APIs. Pixel-perfect UI meeting enterprise-grade reliability.',
     tags: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'REST'],
     color: T.cyan,
   },
@@ -80,6 +80,7 @@ const PROJECTS = [
     tech: ['C#', 'ASP.NET Core 7', 'SQL Server', 'Azure', 'React'],
     color: T.lime,
     gradient: 'linear-gradient(135deg, rgba(198,255,71,0.07) 0%, transparent 65%)',
+    liveUrl: null,
   },
   {
     num: '02',
@@ -91,10 +92,11 @@ const PROJECTS = [
     tech: ['C#', '.NET', 'ASP.NET MVC', 'SQL Server', 'Azure DevOps'],
     color: T.cyan,
     gradient: 'linear-gradient(135deg, rgba(71,229,255,0.07) 0%, transparent 65%)',
+    liveUrl: null,
   },
   {
     num: '03',
-    title: 'Digital Media CMS — Express News',
+    title: 'Digital Media CMS -- Express News',
     category: 'Media · High-Traffic · CMS',
     impact: '3M+ daily users',
     desc: "Backend publishing infrastructure for one of Pakistan's largest news networks. Sub-100ms API response times under 3M+ concurrent daily readers with real-time push via SignalR.",
@@ -102,6 +104,31 @@ const PROJECTS = [
     tech: ['ASP.NET Core', 'C#', 'SQL Server', 'SignalR', 'Azure CDN', 'Redis'],
     color: T.coral,
     gradient: 'linear-gradient(135deg, rgba(255,87,87,0.07) 0%, transparent 65%)',
+    liveUrl: null,
+  },
+  {
+    num: '04',
+    title: 'Freedom Business Daily',
+    category: 'WordPress · Media · Publishing',
+    impact: 'Live & scaling',
+    desc: 'Full WordPress development for a business news and media publication. Custom theme architecture, performance-optimised delivery, SEO-first content structure, and editorial workflow tooling built to handle a growing content team and readership.',
+    outcomes: ['Custom WordPress theme build', 'SEO-optimised site architecture', 'Editorial multi-author workflow', 'Performance-tuned delivery', 'Responsive across all devices'],
+    tech: ['WordPress', 'PHP', 'Custom Theme', 'SEO', 'Performance'],
+    color: '#f59e0b',
+    gradient: 'linear-gradient(135deg, rgba(245,158,11,0.07) 0%, transparent 65%)',
+    liveUrl: 'https://freedombusinessdaily.com/',
+  },
+  {
+    num: '05',
+    title: 'Custom Business Website -- 110 Solutions',
+    category: 'Custom Dev · Agency · Web',
+    impact: 'Live production site',
+    desc: 'Custom-built corporate website for 110 Solutions, an Australian software agency. Bespoke frontend design paired with a hand-coded backend -- no templates, no page builders. Built for speed, brand credibility, and lead generation.',
+    outcomes: ['Fully custom design and build', 'No CMS or page-builder dependencies', 'Optimised for lead conversion', 'Cross-browser and device tested', 'Production-ready and maintained'],
+    tech: ['ASP.NET', 'C#', 'HTML/CSS', 'JavaScript', 'Custom UI'],
+    color: '#a78bfa',
+    gradient: 'linear-gradient(135deg, rgba(167,139,250,0.07) 0%, transparent 65%)',
+    liveUrl: 'https://110solutions.com.au/index.aspx#',
   },
 ];
 
@@ -109,7 +136,7 @@ const PROCESS = [
   {
     step: '01',
     title: 'Discovery',
-    desc: 'Deep-dive into your business goals, technical constraints, and user needs. I ask the questions most developers skip — so nothing surprises us at launch.',
+    desc: 'Deep-dive into your business goals, technical constraints, and user needs. I ask the questions most developers skip -- so nothing surprises us at launch.',
   },
   {
     step: '02',
@@ -119,7 +146,7 @@ const PROCESS = [
   {
     step: '03',
     title: 'Build & Iterate',
-    desc: 'Agile delivery with regular demos and feedback loops. You see progress weekly — no black boxes, no surprises.',
+    desc: 'Agile delivery with regular demos and feedback loops. You see progress weekly -- no black boxes, no surprises.',
   },
   {
     step: '04',
@@ -133,7 +160,7 @@ const EXPERIENCE = [
     role: 'Senior .NET Developer',
     company: 'Waterworks Agency LLC',
     location: 'Texas, USA · Remote',
-    period: 'Oct 2023 — Present',
+    period: 'Oct 2023 to Present',
     badge: 'Now',
     desc: 'Leading architecture and development of enterprise-grade web applications. Mentoring 4 developers, defining coding standards, and driving modern .NET adoption across the stack.',
     color: T.lime,
@@ -142,7 +169,7 @@ const EXPERIENCE = [
     role: '.NET Full Stack Developer',
     company: '110 Solutions',
     location: 'Karachi, Pakistan',
-    period: 'Dec 2021 — Present',
+    period: 'Dec 2021 to Present',
     badge: 'Now',
     desc: 'Building mission-critical applications for Australian and international clients. Delivered 20+ custom solutions spanning ERP, payroll, and e-commerce verticals.',
     color: T.cyan,
@@ -151,7 +178,7 @@ const EXPERIENCE = [
     role: '.NET Full Stack Developer',
     company: 'Express News',
     location: 'Karachi, Pakistan',
-    period: 'Nov 2019 — Dec 2021',
+    period: 'Nov 2019 to Dec 2021',
     badge: 'Past',
     desc: "Engineered scalable backend systems for Pakistan's top-rated news network. Managed full SDLC from stakeholder requirements through deployment and monitoring.",
     color: T.coral,
@@ -160,7 +187,7 @@ const EXPERIENCE = [
 
 const TESTIMONIALS = [
   {
-    quote: 'Syed delivered our payroll platform on time, on budget, and exceeded every technical requirement. The system has been running flawlessly for over a year — exactly what we needed.',
+    quote: 'Syed delivered our payroll platform on time, on budget, and exceeded every technical requirement. The system has been running flawlessly for over a year -- exactly what we needed.',
     name: 'James R.',
     title: 'CTO, FinTech Startup · Canada',
     initials: 'JR',
@@ -190,7 +217,6 @@ function useCounter(target, duration = 2000, trigger = false) {
   const started = useRef(false);
 
   useEffect(() => {
-    // FIX: reset on each trigger so counter replays on re-entry
     if (!trigger) { started.current = false; return; }
     if (started.current) return;
     started.current = true;
@@ -218,7 +244,6 @@ function useCursor() {
   const ringY = useSpring(rawY, { stiffness: 120, damping: 26 });
   const [hovered,  setHovered]  = useState(false);
   const [clicking, setClicking] = useState(false);
-  // FIX: track if cursor is over a light bg (lime banner) to invert colour
   const [onLight, setOnLight] = useState(false);
 
   useEffect(() => {
@@ -247,7 +272,6 @@ function useActiveSection() {
   const [active, setActive] = useState('');
   useEffect(() => {
     const ids = ['home', 'services', 'work', 'process', 'experience', 'contact'];
-    // FIX: use rootMargin instead of threshold so tall sections always trigger
     const observers = ids.map((id) => {
       const el = document.getElementById(id);
       if (!el) return null;
@@ -263,7 +287,6 @@ function useActiveSection() {
   return active;
 }
 
-// FIX: focus trap hook for mobile menu accessibility
 function useFocusTrap(active, containerRef) {
   useEffect(() => {
     if (!active || !containerRef.current) return;
@@ -341,7 +364,6 @@ function StatItem({ num, suffix, label, index }) {
       transition={{ delay: index * 0.12, duration: 0.7 }}
       style={{
         padding: 'clamp(20px,3vw,36px) clamp(12px,2vw,28px)',
-        // FIX: borders handled via CSS class to avoid broken mobile borders
         textAlign: 'center',
       }}
       className={`stat-item stat-item-${index}`}
@@ -371,7 +393,6 @@ function StatItem({ num, suffix, label, index }) {
   );
 }
 
-// FIX: 3x duplication to prevent marquee gap at certain viewport widths
 function Marquee() {
   return (
     <div style={{
@@ -420,7 +441,6 @@ export default function Page() {
   const mobileMenuRef = useRef(null);
   useFocusTrap(mobileOpen, mobileMenuRef);
 
-  // FIX: close mobile menu on hash change (browser back button)
   useEffect(() => {
     const handler = () => setMobileOpen(false);
     window.addEventListener('hashchange', handler);
@@ -445,7 +465,6 @@ export default function Page() {
     return () => window.removeEventListener('resize', check);
   }, []);
 
-  // Replace YOUR_FORM_ID with your actual Formspree form ID
   const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID';
 
   const handleSubmit = async (e) => {
@@ -483,12 +502,11 @@ export default function Page() {
 
   const btnLabel = {
     idle:    'Send Message ↗',
-    loading: 'Sending…',
-    sent:    "✓ Sent — I'll reply soon!",
-    error:   '✗ Failed — please email directly',
+    loading: 'Sending...',
+    sent:    "Sent -- I'll reply soon!",
+    error:   'Failed -- please email directly',
   }[formStatus];
 
-  // FIX: cursor dot/ring colour — dark on light bg, light on dark bg
   const cursorDotBg   = onLight ? '#04040a' : T.text;
   const cursorRingBdr = onLight ? '#04040a' : T.text;
 
@@ -515,7 +533,6 @@ export default function Page() {
         ::-webkit-scrollbar-thumb { background: ${T.lime}44; border-radius: 2px; }
         ::selection { background: ${T.lime}28; color: ${T.lime}; }
 
-        /* Marquee — FIX: animate only 33.33% (one set) since we have 3x copies */
         @keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-33.333%) } }
         .marquee-track {
           display: flex;
@@ -532,7 +549,6 @@ export default function Page() {
         @keyframes badge-float-2 { 0%,100%{margin-top:0px} 50%{margin-top:-5px} }
         @keyframes glow-pulse { 0%,100%{opacity:0.5} 50%{opacity:1} }
 
-        /* Nav link */
         .nav-link {
           color: ${T.muted};
           text-decoration: none;
@@ -558,7 +574,6 @@ export default function Page() {
         .nav-link.active { color: ${T.lime}; }
         .nav-link.active::after { width: 100%; }
 
-        /* Buttons */
         .btn-primary {
           display: inline-flex;
           align-items: center;
@@ -608,13 +623,11 @@ export default function Page() {
         }
         .btn-outline:hover { border-color: ${T.lime}55; color: ${T.lime}; }
 
-        /* Cards */
         .service-card { transition: background 0.4s, transform 0.4s, border-color 0.4s; }
         .service-card:hover { background: ${T.card} !important; transform: translateY(-4px); }
         .project-card { transition: all 0.5s cubic-bezier(0.16,1,0.3,1); cursor: pointer; }
         .exp-card { transition: border-color 0.4s; }
 
-        /* Form fields */
         input, textarea, select {
           background: rgba(255,255,255,0.03) !important;
           border: 1px solid ${T.border} !important;
@@ -634,12 +647,10 @@ export default function Page() {
         input::placeholder, textarea::placeholder { color: ${T.muted} !important; }
         select option { background: ${T.card}; color: ${T.text}; }
 
-        /* ── STAT ITEM BORDERS — FIX: clean borders on all breakpoints ── */
         .stat-item { border-right: 1px solid ${T.border}; }
         .stat-item-3 { border-right: none; }
 
         @media (max-width: 900px) {
-          /* 2-col: items 0+1 top row, 2+3 bottom row */
           .stat-item   { border-right: 1px solid ${T.border}; border-bottom: none; }
           .stat-item-1 { border-right: none; border-bottom: 1px solid ${T.border} !important; }
           .stat-item-0 { border-bottom: 1px solid ${T.border} !important; }
@@ -648,18 +659,32 @@ export default function Page() {
         }
 
         @media (max-width: 600px) {
-          /* 2-col still but smaller — same pattern */
           .stat-item   { border-right: 1px solid ${T.border}; }
           .stat-item-1 { border-right: none !important; }
           .stat-item-3 { border-right: none !important; }
         }
 
-        /* Responsive */
         @media (max-width: 900px) {
           .desktop-only { display: none !important; }
           .mobile-toggle { display: flex !important; }
-          /* FIX: hide photo col on mobile — keep layout clean */
-          .hero-photo-col { display: none !important; }
+          /* FIX: show photo col on mobile but make it smaller and stacked */
+          .hero-photo-col {
+            display: flex !important;
+            flex: 0 0 auto !important;
+            width: 100% !important;
+            min-height: 340px !important;
+            padding: 16px clamp(20px,5vw,48px) 0 !important;
+            justify-content: center !important;
+            align-items: flex-start !important;
+          }
+          .hero-photo-col > div:first-child { display: none !important; } /* hide glow blob */
+          .hero-left-col {
+            width: 100% !important;
+            padding: clamp(32px,5vh,56px) clamp(20px,5vw,48px) 24px !important;
+          }
+          .hero-top-row {
+            flex-direction: column-reverse !important;
+          }
           .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .services-grid > * { border-radius: 16px !important; }
@@ -678,6 +703,9 @@ export default function Page() {
           .process-grid { grid-template-columns: 1fr !important; }
           .test-grid { grid-template-columns: 1fr !important; }
           .cta-email { display: none !important; }
+          .hero-photo-col {
+            min-height: 280px !important;
+          }
         }
         @media (max-width: 480px) {
           .form-name-email { grid-template-columns: 1fr !important; }
@@ -692,7 +720,7 @@ export default function Page() {
         opacity: 0.022,
       }} />
 
-      {/* ── CUSTOM CURSOR (desktop only) — FIX: colour adapts to bg ── */}
+      {/* ── CUSTOM CURSOR (desktop only) ── */}
       {isDesktop && (
         <>
           <motion.div aria-hidden style={{
@@ -720,7 +748,7 @@ export default function Page() {
         </>
       )}
 
-      {/* ── AMBIENT BACKGROUND — FIX: moved to fixed wrapper outside stacking context ── */}
+      {/* ── AMBIENT BACKGROUND ── */}
       <div aria-hidden style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
         <div style={{ position: 'absolute', top: '-10%', right: '-5%',  width: 700, height: 700, borderRadius: '50%', background: `radial-gradient(circle, ${T.lime}07 0%, transparent 65%)` }} />
         <div style={{ position: 'absolute', top: '45%',  left: '-15%', width: 600, height: 600, borderRadius: '50%', background: `radial-gradient(circle, ${T.cyan}05 0%, transparent 65%)` }} />
@@ -754,7 +782,6 @@ export default function Page() {
           height: 68,
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         }}>
-          {/* Logo */}
           <a href="#top" style={{ textDecoration: 'none' }}>
             <span style={{
               fontFamily: "'Bricolage Grotesque', sans-serif",
@@ -765,7 +792,6 @@ export default function Page() {
             </span>
           </a>
 
-          {/* Desktop nav */}
           <nav className="desktop-only" aria-label="Primary navigation" style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
             {NAV_LINKS.map((n) => (
               <a
@@ -788,7 +814,6 @@ export default function Page() {
             Hire Me <span style={{ fontSize: 15 }}>↗</span>
           </a>
 
-          {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen((o) => !o)}
             className="mobile-toggle"
@@ -868,258 +893,261 @@ export default function Page() {
         }}
       >
         {/* Top row: left content + right photo */}
-        <div style={{ display: 'flex', alignItems: 'stretch', flex: '1 1 auto' }}>
-        {/* ── LEFT COLUMN ── */}
-        <div style={{
-          flex: '1 1 0',
-          display: 'flex', flexDirection: 'column', justifyContent: 'center',
-          padding: 'clamp(48px,7vh,96px) clamp(24px,5vw,80px) clamp(48px,7vh,96px) clamp(24px,5vw,80px)',
-          position: 'relative', zIndex: 2,
-        }}>
-          {/* Available badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.05, duration: 0.6 }}
+        <div className="hero-top-row" style={{ display: 'flex', alignItems: 'stretch', flex: '1 1 auto' }}>
+
+          {/* ── LEFT COLUMN ── */}
+          <div
+            className="hero-left-col"
             style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 36,
-              padding: '8px 16px', borderRadius: 100, width: 'fit-content',
-              background: `${T.lime}10`, border: `1px solid ${T.lime}30`,
-            }}
-          >
-            <div style={{
-              width: 7, height: 7, borderRadius: '50%',
-              background: T.lime, boxShadow: `0 0 10px ${T.lime}`,
-              animation: 'glow-pulse 2s ease-in-out infinite',
-            }} />
-            <span style={{ fontSize: 11, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.15em', textTransform: 'uppercase', color: T.lime }}>
-              Available · Remote Worldwide
-            </span>
-          </motion.div>
-
-          {/* Headline */}
-          <div style={{ marginBottom: 28 }}>
-            {[
-              { text: 'Senior .NET',  extraStyle: { color: T.text } },
-              { text: 'Full Stack',   extraStyle: { fontFamily: "'Instrument Serif', serif", fontStyle: 'italic', fontWeight: 400, background: `linear-gradient(120deg, ${T.text} 0%, ${T.lime} 50%, ${T.cyan} 100%)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' } },
-              { text: 'Developer.',   extraStyle: { color: T.text } },
-            ].map((line, i) => (
-              <div key={i} style={{ overflow: 'hidden' }}>
-                <motion.h1
-                  initial={{ y: '110%' }}
-                  animate={{ y: 0 }}
-                  transition={{ delay: 0.15 + i * 0.1, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                  style={{
-                    fontSize: 'clamp(42px, 6.5vw, 100px)',
-                    fontWeight: 800,
-                    letterSpacing: '-0.04em',
-                    lineHeight: 0.94,
-                    fontFamily: "'Bricolage Grotesque', sans-serif",
-                    margin: 0,
-                    wordBreak: 'break-word',
-                    ...line.extraStyle,
-                  }}
-                >
-                  {line.text}
-                </motion.h1>
-              </div>
-            ))}
-          </div>
-
-          {/* Bio */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.55, duration: 0.7 }}
-            style={{ fontSize: 17, color: T.muted, lineHeight: 1.8, marginBottom: 36, fontFamily: "'Bricolage Grotesque', sans-serif", maxWidth: 520, letterSpacing: '0.01em' }}
-          >
-            I'm{' '}
-            <strong style={{ color: T.text, fontWeight: 700 }}>Syed Dilawar Hussain</strong>
-            {' '}— a senior engineer who turns complex enterprise requirements into elegant, high-performance systems.
-            C#, ASP.NET Core, Azure, React. 8+ years. 50+ delivered.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.68, duration: 0.6 }}
-            style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 48 }}
-          >
-            <a href="#contact" className="btn-primary"
-              style={{ padding: '15px 32px', borderRadius: 12, fontSize: 15, letterSpacing: '0.01em' }}
-              onMouseEnter={onEnter} onMouseLeave={onLeave}
-            >
-              Start a Project ↗
-            </a>
-            <a href="#work" className="btn-outline"
-              style={{ padding: '14px 28px', borderRadius: 12, fontSize: 15 }}
-              onMouseEnter={onEnter} onMouseLeave={onLeave}
-            >
-              View Work
-            </a>
-          </motion.div>
-
-        </div>
-
-        {/* ── RIGHT COLUMN — editorial portrait card ── */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.25, duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-          className="hero-photo-col"
-          style={{
-            flex: '0 0 clamp(280px, 33vw, 420px)',
-            alignSelf: 'stretch',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-            padding: '40px 0 80px 0',
-            position: 'relative',
-          }}
-        >
-          {/* Glow blob centred on the card */}
-          <div style={{
-            position: 'absolute', top: '50%', left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: 400, height: 400, borderRadius: '50%',
-            background: `radial-gradient(circle, ${T.lime}0b 0%, transparent 65%)`,
-            pointerEvents: 'none', zIndex: 0,
-          }} />
-
-          {/* Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 24, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 0.5, duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-            style={{
+              flex: '1 1 0',
+              display: 'flex', flexDirection: 'column', justifyContent: 'center',
+              padding: 'clamp(48px,7vh,96px) clamp(24px,5vw,80px) clamp(48px,7vh,96px) clamp(24px,5vw,80px)',
               position: 'relative', zIndex: 2,
-              width: '100%', maxWidth: 340,
-              borderRadius: 28,
-              overflow: 'hidden',
-              border: `1px solid ${T.lime}22`,
-              boxShadow: `0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px ${T.border}`,
-              background: T.card,
-              aspectRatio: '3 / 4',
             }}
           >
-            {/* Photo */}
-            <Image
-              src="/profile.jpg"
-              alt="Syed Dilawar Hussain"
-              fill
-              sizes="340px"
-              style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
-              priority
-            />
-
-            {/* Bottom gradient overlay */}
-            <div style={{
-              position: 'absolute', inset: 0, zIndex: 2,
-              background: `linear-gradient(to top, rgba(4,4,10,0.92) 0%, rgba(4,4,10,0.3) 45%, transparent 70%)`,
-            }} />
-
-            {/* Name + title inside card */}
-            <div style={{
-              position: 'absolute', bottom: 0, left: 0, right: 0,
-              zIndex: 3, padding: '24px 24px 20px',
-            }}>
-              <div style={{ fontSize: 10, color: T.lime, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 6 }}>
-                Senior .NET Developer
-              </div>
-              <div style={{ fontSize: 20, fontWeight: 800, color: T.text, fontFamily: "'Bricolage Grotesque', sans-serif", letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-                Syed Dilawar<br />Hussain
-              </div>
-
-              {/* Skill pills row */}
-              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 14 }}>
-                {['.NET 8', 'ASP.NET', 'Azure', 'React'].map((s, i) => (
-                  <span key={i} style={{
-                    fontSize: 9, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace",
-                    letterSpacing: '0.08em', padding: '4px 9px', borderRadius: 20,
-                    background: `${T.lime}15`, border: `1px solid ${T.lime}30`, color: T.lime,
-                  }}>{s}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* Top-right availability badge */}
-            <div style={{
-              position: 'absolute', top: 16, right: 16, zIndex: 3,
-              display: 'flex', alignItems: 'center', gap: 6,
-              padding: '6px 12px', borderRadius: 40,
-              background: `rgba(4,4,10,0.75)`,
-              backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
-              border: `1px solid ${T.lime}35`,
-            }}>
-              <div style={{ width: 6, height: 6, borderRadius: '50%', background: T.lime, boxShadow: `0 0 8px ${T.lime}`, animation: 'glow-pulse 2s ease-in-out infinite' }} />
-              <span style={{ fontSize: 9, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.12em', textTransform: 'uppercase', color: T.lime }}>
-                Available
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Floating skill badges — positioned relative to the column, outside card */}
-          {[
-            { label: 'ASP.NET Core', icon: '◈', color: T.lime,      top: '15%', left: '-5%'  },
-            { label: 'Azure DevOps', icon: '☁', color: T.coral,    top: '33%', right: '-1%', left: undefined },
-            { label: 'SignalR',      icon: '⚡', color: T.cyan,    top: '57%', right: '-1%', left: undefined },
-            { label: 'SQL Server',   icon: '⊞', color: '#a78bfa', top: '72%', left: '-5%'  },
-          ].map((b, i) => (
+            {/* Available badge */}
             <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.5, x: b.left ? -10 : 10 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ delay: 0.9 + i * 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.05, duration: 0.6 }}
               style={{
-                position: 'absolute',
-                top: b.top,
-                ...(b.left !== undefined ? { left: b.left } : { right: b.right }),
-                zIndex: 5,
-                display: 'flex', alignItems: 'center', gap: 7,
-                padding: '8px 13px', borderRadius: 40,
-                background: `${T.bg}f0`,
-                backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)',
-                border: `1px solid ${b.color}35`,
-                boxShadow: `0 6px 20px rgba(0,0,0,0.5), 0 0 12px ${b.color}0f`,
-                whiteSpace: 'nowrap',
+                display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 36,
+                padding: '8px 16px', borderRadius: 100, width: 'fit-content',
+                background: `${T.lime}10`, border: `1px solid ${T.lime}30`,
               }}
             >
-              <span style={{ fontSize: 13, color: b.color, lineHeight: 1 }}>{b.icon}</span>
-              <span style={{ fontSize: 11, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: T.text, letterSpacing: '0.04em' }}>{b.label}</span>
+              <div style={{
+                width: 7, height: 7, borderRadius: '50%',
+                background: T.lime, boxShadow: `0 0 10px ${T.lime}`,
+                animation: 'glow-pulse 2s ease-in-out infinite',
+              }} />
+              <span style={{ fontSize: 11, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.15em', textTransform: 'uppercase', color: T.lime }}>
+                Available · Remote Worldwide
+              </span>
             </motion.div>
-          ))}
 
-          {/* Years experience badge — bottom left of column */}
+            {/* Headline */}
+            <div style={{ marginBottom: 28 }}>
+              {[
+                { text: 'Senior .NET',  extraStyle: { color: T.text } },
+                { text: 'Full Stack',   extraStyle: { fontFamily: "'Instrument Serif', serif", fontStyle: 'italic', fontWeight: 400, background: `linear-gradient(120deg, ${T.text} 0%, ${T.lime} 50%, ${T.cyan} 100%)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' } },
+                { text: 'Developer.',   extraStyle: { color: T.text } },
+              ].map((line, i) => (
+                <div key={i} style={{ overflow: 'hidden' }}>
+                  <motion.h1
+                    initial={{ y: '110%' }}
+                    animate={{ y: 0 }}
+                    transition={{ delay: 0.15 + i * 0.1, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                    style={{
+                      fontSize: 'clamp(42px, 6.5vw, 100px)',
+                      fontWeight: 800,
+                      letterSpacing: '-0.04em',
+                      lineHeight: 0.94,
+                      fontFamily: "'Bricolage Grotesque', sans-serif",
+                      margin: 0,
+                      wordBreak: 'break-word',
+                      ...line.extraStyle,
+                    }}
+                  >
+                    {line.text}
+                  </motion.h1>
+                </div>
+              ))}
+            </div>
+
+            {/* Bio */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55, duration: 0.7 }}
+              style={{ fontSize: 17, color: T.muted, lineHeight: 1.8, marginBottom: 36, fontFamily: "'Bricolage Grotesque', sans-serif", maxWidth: 520, letterSpacing: '0.01em' }}
+            >
+              I'm{' '}
+              <strong style={{ color: T.text, fontWeight: 700 }}>Syed Dilawar Hussain</strong>
+              {' '}-- a senior developer who turns complex enterprise requirements into elegant, high-performance systems.
+              C#, ASP.NET Core, Azure, React. 8+ years. 50+ delivered projects.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.68, duration: 0.6 }}
+              style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 48 }}
+            >
+              <a href="#contact" className="btn-primary"
+                style={{ padding: '15px 32px', borderRadius: 12, fontSize: 15, letterSpacing: '0.01em' }}
+                onMouseEnter={onEnter} onMouseLeave={onLeave}
+              >
+                Start a Project ↗
+              </a>
+              <a href="#work" className="btn-outline"
+                style={{ padding: '14px 28px', borderRadius: 12, fontSize: 15 }}
+                onMouseEnter={onEnter} onMouseLeave={onLeave}
+              >
+                View Work
+              </a>
+            </motion.div>
+          </div>
+
+          {/* ── RIGHT COLUMN -- editorial portrait card ── */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.4, duration: 0.6 }}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.25, duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+            className="hero-photo-col"
             style={{
-              position: 'absolute', bottom: '12%', left: '-4%', zIndex: 5,
-              display: 'flex', alignItems: 'center', gap: 10,
-              padding: '10px 16px', borderRadius: 14,
-              background: `${T.bg}f0`,
-              backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)',
-              border: `1px solid ${T.border}`,
-              boxShadow: '0 8px 28px rgba(0,0,0,0.5)',
+              flex: '0 0 clamp(280px, 33vw, 420px)',
+              alignSelf: 'stretch',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'flex-start',
+              padding: '40px 0 80px 0',
+              position: 'relative',
             }}
           >
+            {/* Glow blob */}
             <div style={{
-              width: 38, height: 38, borderRadius: 10, flexShrink: 0,
-              background: `${T.lime}14`, border: `1px solid ${T.lime}28`,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontFamily: "'Instrument Serif', serif", fontStyle: 'italic', fontSize: 17, color: T.lime,
-            }}>8+</div>
-            <div>
-              <div style={{ fontSize: 12, fontWeight: 700, color: T.text, fontFamily: "'Bricolage Grotesque', sans-serif", lineHeight: 1 }}>Years Experience</div>
-              <div style={{ fontSize: 10, color: T.muted, fontFamily: "'JetBrains Mono', monospace", marginTop: 3 }}>50+ projects delivered</div>
-            </div>
+              position: 'absolute', top: '50%', left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: 400, height: 400, borderRadius: '50%',
+              background: `radial-gradient(circle, ${T.lime}0b 0%, transparent 65%)`,
+              pointerEvents: 'none', zIndex: 0,
+            }} />
+
+            {/* Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 24, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: 0.5, duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                position: 'relative', zIndex: 2,
+                width: '100%', maxWidth: 340,
+                borderRadius: 28,
+                overflow: 'hidden',
+                border: `1px solid ${T.lime}22`,
+                boxShadow: `0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px ${T.border}`,
+                background: T.card,
+                aspectRatio: '3 / 4',
+              }}
+            >
+              {/* Photo */}
+              <Image
+                src="/profile.jpg"
+                alt="Syed Dilawar Hussain"
+                fill
+                sizes="(max-width: 900px) 80vw, 340px"
+                style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
+                priority
+              />
+
+              {/* Bottom gradient overlay */}
+              <div style={{
+                position: 'absolute', inset: 0, zIndex: 2,
+                background: `linear-gradient(to top, rgba(4,4,10,0.92) 0%, rgba(4,4,10,0.3) 45%, transparent 70%)`,
+              }} />
+
+              {/* Name + title inside card */}
+              <div style={{
+                position: 'absolute', bottom: 0, left: 0, right: 0,
+                zIndex: 3, padding: '24px 24px 20px',
+              }}>
+                <div style={{ fontSize: 10, color: T.lime, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 6 }}>
+                  Senior .NET Developer
+                </div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: T.text, fontFamily: "'Bricolage Grotesque', sans-serif", letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+                  Syed Dilawar<br />Hussain
+                </div>
+
+                {/* Skill pills row */}
+                <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 14 }}>
+                  {['.NET 8', 'ASP.NET', 'Azure', 'React'].map((s, i) => (
+                    <span key={i} style={{
+                      fontSize: 9, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace",
+                      letterSpacing: '0.08em', padding: '4px 9px', borderRadius: 20,
+                      background: `${T.lime}15`, border: `1px solid ${T.lime}30`, color: T.lime,
+                    }}>{s}</span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Top-right availability badge */}
+              <div style={{
+                position: 'absolute', top: 16, right: 16, zIndex: 3,
+                display: 'flex', alignItems: 'center', gap: 6,
+                padding: '6px 12px', borderRadius: 40,
+                background: `rgba(4,4,10,0.75)`,
+                backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
+                border: `1px solid ${T.lime}35`,
+              }}>
+                <div style={{ width: 6, height: 6, borderRadius: '50%', background: T.lime, boxShadow: `0 0 8px ${T.lime}`, animation: 'glow-pulse 2s ease-in-out infinite' }} />
+                <span style={{ fontSize: 9, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.12em', textTransform: 'uppercase', color: T.lime }}>
+                  Available
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Floating skill badges */}
+            {[
+              { label: 'ASP.NET Core', icon: '◈', color: T.lime,      top: '15%', left: '-5%'  },
+              { label: 'Azure DevOps', icon: '☁', color: T.coral,    top: '33%', right: '-1%', left: undefined },
+              { label: 'SignalR',      icon: '⚡', color: T.cyan,    top: '57%', right: '-1%', left: undefined },
+              { label: 'SQL Server',   icon: '⊞', color: '#a78bfa', top: '72%', left: '-5%'  },
+            ].map((b, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.5, x: b.left ? -10 : 10 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                transition={{ delay: 0.9 + i * 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                style={{
+                  position: 'absolute',
+                  top: b.top,
+                  ...(b.left !== undefined ? { left: b.left } : { right: b.right }),
+                  zIndex: 5,
+                  display: 'flex', alignItems: 'center', gap: 7,
+                  padding: '8px 13px', borderRadius: 40,
+                  background: `${T.bg}f0`,
+                  backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)',
+                  border: `1px solid ${b.color}35`,
+                  boxShadow: `0 6px 20px rgba(0,0,0,0.5), 0 0 12px ${b.color}0f`,
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                <span style={{ fontSize: 13, color: b.color, lineHeight: 1 }}>{b.icon}</span>
+                <span style={{ fontSize: 11, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: T.text, letterSpacing: '0.04em' }}>{b.label}</span>
+              </motion.div>
+            ))}
+
+            {/* Years experience badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.4, duration: 0.6 }}
+              style={{
+                position: 'absolute', bottom: '12%', left: '-4%', zIndex: 5,
+                display: 'flex', alignItems: 'center', gap: 10,
+                padding: '10px 16px', borderRadius: 14,
+                background: `${T.bg}f0`,
+                backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)',
+                border: `1px solid ${T.border}`,
+                boxShadow: '0 8px 28px rgba(0,0,0,0.5)',
+              }}
+            >
+              <div style={{
+                width: 38, height: 38, borderRadius: 10, flexShrink: 0,
+                background: `${T.lime}14`, border: `1px solid ${T.lime}28`,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontFamily: "'Instrument Serif', serif", fontStyle: 'italic', fontSize: 17, color: T.lime,
+              }}>8+</div>
+              <div>
+                <div style={{ fontSize: 12, fontWeight: 700, color: T.text, fontFamily: "'Bricolage Grotesque', sans-serif", lineHeight: 1 }}>Years Experience</div>
+                <div style={{ fontSize: 10, color: T.muted, fontFamily: "'JetBrains Mono', monospace", marginTop: 3 }}>50+ projects delivered</div>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
         </div>{/* end top row */}
 
-        {/* Stats — full width bar */}
+        {/* Stats -- full width bar */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -1141,7 +1169,7 @@ export default function Page() {
       </div>
 
       {/* ════════════════════════════════
-          SERVICES — FIX: gap 2→16px so cards breathe
+          SERVICES
       ════════════════════════════════ */}
       <section
         id="services"
@@ -1161,12 +1189,11 @@ export default function Page() {
                 My Services
               </h2>
               <p style={{ fontSize: 16, color: T.muted, maxWidth: 400, lineHeight: 1.75, fontFamily: "'Bricolage Grotesque', sans-serif", letterSpacing: '0.01em' }}>
-                Eight years of deep specialization across the full .NET ecosystem — from architecture to cloud deployment.
+                Eight years of deep specialization across the full .NET ecosystem -- from architecture to cloud deployment.
               </p>
             </div>
           </motion.div>
 
-          {/* FIX: gap 2→16 so cards aren't crammed together */}
           <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
             {SERVICES.map((s, i) => (
               <motion.div
@@ -1213,7 +1240,7 @@ export default function Page() {
       </section>
 
       {/* ════════════════════════════════
-          PROJECTS — FIX: gap 3→12px
+          PROJECTS
       ════════════════════════════════ */}
       <section
         id="work"
@@ -1250,7 +1277,7 @@ export default function Page() {
                 role="button"
                 tabIndex={0}
                 aria-expanded={activeProject === i}
-                aria-label={`${p.title} — click to ${activeProject === i ? 'collapse' : 'expand'} details`}
+                aria-label={`${p.title} -- click to ${activeProject === i ? 'collapse' : 'expand'} details`}
                 onClick={() => setActiveProject(activeProject === i ? null : i)}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActiveProject(activeProject === i ? null : i); } }}
                 onMouseEnter={onEnter} onMouseLeave={onLeave}
@@ -1275,9 +1302,33 @@ export default function Page() {
                       <div style={{ fontSize: 11, color: T.muted, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.08em', marginBottom: 6 }}>
                         {p.category}
                       </div>
-                      <h3 style={{ fontSize: 'clamp(17px, 2.4vw, 24px)', fontWeight: 800, color: T.text, letterSpacing: '-0.02em', fontFamily: "'Bricolage Grotesque', sans-serif" }}>
-                        {p.title}
-                      </h3>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+                        <h3 style={{ fontSize: 'clamp(17px, 2.4vw, 24px)', fontWeight: 800, color: T.text, letterSpacing: '-0.02em', fontFamily: "'Bricolage Grotesque', sans-serif" }}>
+                          {p.title}
+                        </h3>
+                        {p.liveUrl && (
+                          <a
+                            href={p.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            style={{
+                              display: 'inline-flex', alignItems: 'center', gap: 5,
+                              padding: '4px 10px', borderRadius: 20,
+                              background: p.color + '14', border: `1px solid ${p.color}35`,
+                              color: p.color,
+                              fontSize: 10, fontWeight: 700,
+                              fontFamily: "'JetBrains Mono', monospace",
+                              letterSpacing: '0.1em', textDecoration: 'none',
+                              textTransform: 'uppercase',
+                              transition: 'background 0.2s',
+                              whiteSpace: 'nowrap',
+                            }}
+                          >
+                            <span style={{ fontSize: 8 }}>●</span> Live Site ↗
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
@@ -1331,6 +1382,24 @@ export default function Page() {
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                             {p.tech.map((t, j) => <Tag key={j} color={p.color}>{t}</Tag>)}
                           </div>
+                          {p.liveUrl && (
+                            <a
+                              href={p.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              style={{
+                                display: 'inline-flex', alignItems: 'center', gap: 8,
+                                marginTop: 20, padding: '10px 18px', borderRadius: 10,
+                                background: p.color + '12', border: `1px solid ${p.color}30`,
+                                color: p.color, fontSize: 13, fontWeight: 700,
+                                fontFamily: "'Bricolage Grotesque', sans-serif",
+                                textDecoration: 'none', transition: 'background 0.2s',
+                              }}
+                            >
+                              View Live Site ↗
+                            </a>
+                          )}
                         </div>
                         <div style={{ paddingTop: 32 }}>
                           <div style={{ fontSize: 11, color: p.color, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.15em', marginBottom: 16, textTransform: 'uppercase' }}>
@@ -1547,7 +1616,7 @@ export default function Page() {
       </section>
 
       {/* ════════════════════════════════
-          CTA BANNER — FIX: data-light-bg for cursor colour adaptation
+          CTA BANNER
       ════════════════════════════════ */}
       <section style={{ position: 'relative', zIndex: 1, padding: 'clamp(40px,5vh,60px) clamp(20px,5vw,80px)', background: T.surface }}>
         <motion.div
@@ -1639,7 +1708,7 @@ export default function Page() {
             {/* LEFT */}
             <div>
               <p style={{ fontSize: 17, color: T.muted, lineHeight: 1.85, marginBottom: 44, fontFamily: "'Bricolage Grotesque', sans-serif", maxWidth: 440, letterSpacing: '0.01em' }}>
-                Whether you need a full-stack enterprise application, cloud migration, technical consultation, or a long-term engineering partner — I'd love to hear about your challenge.
+                Whether you need a full-stack enterprise application, cloud migration, technical consultation, or a long-term engineering partner -- I'd love to hear about your challenge.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4, marginBottom: 44 }}>
@@ -1704,7 +1773,7 @@ export default function Page() {
               </div>
             </div>
 
-            {/* RIGHT — form */}
+            {/* RIGHT -- form */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1768,8 +1837,8 @@ export default function Page() {
                     >
                       <option value="">Select a range...</option>
                       <option value="under-5k">Under $5,000</option>
-                      <option value="5k-15k">$5,000 – $15,000</option>
-                      <option value="15k-50k">$15,000 – $50,000</option>
+                      <option value="5k-15k">$5,000 -- $15,000</option>
+                      <option value="15k-50k">$15,000 -- $50,000</option>
                       <option value="50k+">$50,000+</option>
                       <option value="retainer">Ongoing / Retainer</option>
                     </select>
