@@ -42,14 +42,14 @@ const SERVICES = [
   {
     num: '01',
     title: 'Custom Software & Web Apps',
-    desc: 'I build the software your business actually needs - from scratch. Websites, internal tools, customer portals, SaaS platforms. If you can describe it, I can build it reliably and on time.',
+    desc: 'I build the software your business actually needs -- from scratch. Websites, internal tools, customer portals, SaaS platforms. If you can describe it, I can build it reliably and on time.',
     tags: ['C# / .NET 8', 'ASP.NET Core', 'React', 'Next.js', 'REST APIs'],
     color: T.lime,
   },
   {
     num: '02',
     title: 'Business Systems & ERP',
-    desc: 'Replace spreadsheets and disconnected tools with one system that runs your business. Inventory, HR, finance, payroll, reporting - all unified and automated for your team.',
+    desc: 'Replace spreadsheets and disconnected tools with one system that runs your business. Inventory, HR, finance, payroll, reporting -- all unified and automated for your team.',
     tags: ['ERP / CRM', 'Payroll Systems', 'Workflow Automation', 'Reporting', 'SQL Server'],
     color: T.cyan,
   },
@@ -70,7 +70,7 @@ const SERVICES = [
   {
     num: '05',
     title: 'WordPress Development',
-    desc: 'Professional WordPress websites built properly - custom themes, fast load times, SEO-ready structure, and easy for your team to manage. No bloated page builders or cookie-cutter templates.',
+    desc: 'Professional WordPress websites built properly -- custom themes, fast load times, SEO-ready structure, and easy for your team to manage. No bloated page builders or cookie-cutter templates.',
     tags: ['WordPress', 'Custom Themes', 'PHP', 'SEO Optimisation', 'Performance'],
     color: '#f59e0b',
   },
@@ -101,7 +101,7 @@ const PROJECTS = [
     title: 'All-in-One Business Management System',
     category: 'ERP · Retail · Logistics · Manufacturing',
     impact: '99.9% uptime SLA',
-    desc: 'A fully custom business management system built to replace scattered spreadsheets and disconnected tools. Inventory, HR, finance, and analytics unified into one platform - serving clients across retail, manufacturing, and logistics.',
+    desc: 'A fully custom business management system built to replace scattered spreadsheets and disconnected tools. Inventory, HR, finance, and analytics unified into one platform -- serving clients across retail, manufacturing, and logistics.',
     outcomes: ['Real-time analytics dashboard', 'Inventory & HR in one system', 'Role-based access control', '99.9% uptime maintained', 'Integrated third-party APIs'],
     tech: ['C#', '.NET', 'ASP.NET MVC', 'SQL Server', 'Azure DevOps'],
     color: T.cyan,
@@ -110,7 +110,7 @@ const PROJECTS = [
   },
   {
     num: '03',
-    title: 'Digital Media CMS - Express News',
+    title: 'Digital Media CMS -- Express News',
     category: 'Media · High-Traffic · CMS',
     impact: '3M+ daily users',
     desc: "Backend publishing infrastructure for one of Pakistan's largest news networks. Sub-100ms API response times under 3M+ concurrent daily readers with real-time push via SignalR.",
@@ -122,10 +122,10 @@ const PROJECTS = [
   },
   {
     num: '04',
-    title: 'News & Media Website - WordPress Build',
+    title: 'News & Media Website -- WordPress Build',
     category: 'WordPress · Media · Publishing',
     impact: 'Live & scaling',
-    desc: 'Full WordPress website built for a business news and media publication - Freedom Business Daily. Custom theme architecture, fast load times, SEO-first content structure, and a smooth editorial workflow for a growing team of writers and editors.',
+    desc: 'Full WordPress website built for a business news and media publication -- Freedom Business Daily. Custom theme architecture, fast load times, SEO-first content structure, and a smooth editorial workflow for a growing team of writers and editors.',
     outcomes: ['Custom WordPress theme build', 'SEO-optimised site architecture', 'Editorial multi-author workflow', 'Performance-tuned delivery', 'Responsive across all devices'],
     tech: ['WordPress', 'PHP', 'Custom Theme', 'SEO', 'Performance'],
     color: '#f59e0b',
@@ -134,10 +134,10 @@ const PROJECTS = [
   },
   {
     num: '05',
-    title: 'Corporate Website - Built From Scratch, No Templates',
+    title: 'Corporate Website -- Built From Scratch, No Templates',
     category: 'Custom Dev · Agency · Lead Generation',
     impact: 'Live production site',
-    desc: 'A fully hand-coded corporate website for 110 Solutions, an Australian software agency. No WordPress, no page builders - every line custom written for speed, brand credibility, and converting visitors into leads.',
+    desc: 'A fully hand-coded corporate website for 110 Solutions, an Australian software agency. No WordPress, no page builders -- every line custom written for speed, brand credibility, and converting visitors into leads.',
     outcomes: ['Fully custom design and build', 'No CMS or page-builder dependencies', 'Optimised for lead conversion', 'Cross-browser and device tested', 'Production-ready and maintained'],
     tech: ['ASP.NET', 'C#', 'HTML/CSS', 'JavaScript', 'Custom UI'],
     color: '#a78bfa',
@@ -150,7 +150,7 @@ const PROCESS = [
   {
     step: '01',
     title: 'Discovery',
-    desc: 'Deep-dive into your business goals, technical constraints, and user needs. I ask the questions most developers skip - so nothing surprises us at launch.',
+    desc: 'Deep-dive into your business goals, technical constraints, and user needs. I ask the questions most developers skip -- so nothing surprises us at launch.',
   },
   {
     step: '02',
@@ -160,7 +160,7 @@ const PROCESS = [
   {
     step: '03',
     title: 'Build & Iterate',
-    desc: 'Agile delivery with regular demos and feedback loops. You see progress weekly - no black boxes, no surprises.',
+    desc: 'Agile delivery with regular demos and feedback loops. You see progress weekly -- no black boxes, no surprises.',
   },
   {
     step: '04',
@@ -201,7 +201,7 @@ const EXPERIENCE = [
 
 const TESTIMONIALS = [
   {
-    quote: 'Syed delivered our payroll platform on time, on budget, and exceeded every technical requirement. The system has been running flawlessly for over a year - exactly what we needed.',
+    quote: 'Syed delivered our payroll platform on time, on budget, and exceeded every technical requirement. The system has been running flawlessly for over a year -- exactly what we needed.',
     name: 'James R.',
     title: 'CTO, FinTech Startup · Canada',
     initials: 'JR',
@@ -517,8 +517,8 @@ export default function Page() {
   const btnLabel = {
     idle:    'Send Message ↗',
     loading: 'Sending...',
-    sent:    "Sent - I'll reply soon!",
-    error:   'Failed - please email directly',
+    sent:    "Sent -- I'll reply soon!",
+    error:   'Failed -- please email directly',
   }[formStatus];
 
   const cursorDotBg   = onLight ? '#04040a' : T.text;
@@ -681,50 +681,92 @@ export default function Page() {
         @media (max-width: 900px) {
           .desktop-only { display: none !important; }
           .mobile-toggle { display: flex !important; }
-          /* FIX: show photo col on mobile but make it smaller and stacked */
+
+          /* ── HERO PHOTO: compact card on tablet ── */
           .hero-photo-col {
             display: flex !important;
             flex: 0 0 auto !important;
             width: 100% !important;
-            min-height: 340px !important;
-            padding: 16px clamp(20px,5vw,48px) 0 !important;
+            padding: 24px clamp(20px,5vw,48px) 0 !important;
             justify-content: center !important;
             align-items: flex-start !important;
+            min-height: unset !important;
           }
-          .hero-photo-col > div:first-child { display: none !important; } /* hide glow blob */
+          /* hide glow blob and ALL floating badges on mobile */
+          .hero-photo-col > div:first-child { display: none !important; }
+          .hero-floating-badge { display: none !important; }
+          .hero-exp-badge { display: none !important; }
+          /* constrain the card itself */
+          .hero-photo-card {
+            max-width: 260px !important;
+            max-height: 346px !important;
+            width: 260px !important;
+            aspect-ratio: 3/4 !important;
+          }
           .hero-left-col {
             width: 100% !important;
-            padding: clamp(32px,5vh,56px) clamp(20px,5vw,48px) 24px !important;
+            padding: clamp(32px,5vh,56px) clamp(20px,5vw,48px) 20px !important;
           }
           .hero-top-row {
             flex-direction: column-reverse !important;
           }
+
           .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .services-grid > * { border-radius: 16px !important; }
-          /* services was 3-col desktop, 2-col tablet is already correct */
           .process-grid { grid-template-columns: 1fr 1fr !important; }
           .process-grid > * { border-right: none !important; border-bottom: 1px solid ${T.border} !important; }
           .exp-grid { grid-template-columns: 1fr !important; }
           .test-grid { grid-template-columns: 1fr 1fr !important; }
           .form-name-email { grid-template-columns: 1fr !important; }
+
+          /* ── FOOTER: stack all columns ── */
+          .footer-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .footer-brand-col {
+            grid-column: span 1 !important;
+          }
+          /* nav + contact sit side-by-side inside a 2-col sub-grid */
+          .footer-links-row {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 32px !important;
+          }
         }
+
         @media (min-width: 901px) {
           .mobile-toggle { display: none !important; }
         }
+
         @media (max-width: 600px) {
           .services-grid { grid-template-columns: 1fr !important; }
           .stats-grid { grid-template-columns: 1fr 1fr !important; }
           .process-grid { grid-template-columns: 1fr !important; }
           .test-grid { grid-template-columns: 1fr !important; }
           .cta-email { display: none !important; }
+          /* even smaller photo on phones */
+          .hero-photo-card {
+            max-width: 220px !important;
+            width: 220px !important;
+          }
           .hero-photo-col {
-            min-height: 280px !important;
+            padding: 16px clamp(16px,4vw,32px) 0 !important;
+          }
+          /* footer nav+contact side by side on phones */
+          .footer-links-row {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 32px !important;
           }
         }
+
         @media (max-width: 480px) {
           .form-name-email { grid-template-columns: 1fr !important; }
           .trust-grid { grid-template-columns: 1fr !important; }
+          .footer-links-row {
+            grid-template-columns: 1fr !important;
+          }
         }
       `}</style>
 
@@ -979,7 +1021,7 @@ export default function Page() {
             >
               I'm{' '}
               <strong style={{ color: T.text, fontWeight: 700 }}>Syed Dilawar Hussain</strong>
-              {' '}- a senior developer who turns complex enterprise requirements into elegant, high-performance systems.
+              {' '}-- a senior developer who turns complex enterprise requirements into elegant, high-performance systems.
               C#, ASP.NET Core, Azure, React. 8+ years. 50+ delivered projects.
             </motion.p>
 
@@ -1005,7 +1047,7 @@ export default function Page() {
             </motion.div>
           </div>
 
-          {/* ── RIGHT COLUMN - editorial portrait card ── */}
+          {/* ── RIGHT COLUMN -- editorial portrait card ── */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -1035,6 +1077,7 @@ export default function Page() {
               initial={{ opacity: 0, y: 24, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ delay: 0.5, duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+              className="hero-photo-card"
               style={{
                 position: 'relative', zIndex: 2,
                 width: '100%', maxWidth: 340,
@@ -1114,6 +1157,7 @@ export default function Page() {
                 initial={{ opacity: 0, scale: 0.5, x: b.left ? -10 : 10 }}
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ delay: 0.9 + i * 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="hero-floating-badge"
                 style={{
                   position: 'absolute',
                   top: b.top,
@@ -1138,6 +1182,7 @@ export default function Page() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.4, duration: 0.6 }}
+              className="hero-exp-badge"
               style={{
                 position: 'absolute', bottom: '12%', left: '-4%', zIndex: 5,
                 display: 'flex', alignItems: 'center', gap: 10,
@@ -1162,7 +1207,7 @@ export default function Page() {
           </motion.div>
         </div>{/* end top row */}
 
-        {/* Stats - full width bar */}
+        {/* Stats -- full width bar */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -1204,7 +1249,7 @@ export default function Page() {
                 My Services
               </h2>
               <p style={{ fontSize: 16, color: T.muted, maxWidth: 400, lineHeight: 1.75, fontFamily: "'Bricolage Grotesque', sans-serif", letterSpacing: '0.01em' }}>
-                Eight years delivering across the full spectrum - custom software, business systems, cloud, databases, WordPress, and QA.
+                Eight years delivering across the full spectrum -- custom software, business systems, cloud, databases, WordPress, and QA.
               </p>
             </div>
           </motion.div>
@@ -1292,7 +1337,7 @@ export default function Page() {
                 role="button"
                 tabIndex={0}
                 aria-expanded={activeProject === i}
-                aria-label={`${p.title} - click to ${activeProject === i ? 'collapse' : 'expand'} details`}
+                aria-label={`${p.title} -- click to ${activeProject === i ? 'collapse' : 'expand'} details`}
                 onClick={() => setActiveProject(activeProject === i ? null : i)}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActiveProject(activeProject === i ? null : i); } }}
                 onMouseEnter={onEnter} onMouseLeave={onLeave}
@@ -1723,7 +1768,7 @@ export default function Page() {
             {/* LEFT */}
             <div>
               <p style={{ fontSize: 17, color: T.muted, lineHeight: 1.85, marginBottom: 44, fontFamily: "'Bricolage Grotesque', sans-serif", maxWidth: 440, letterSpacing: '0.01em' }}>
-                Whether you need a full-stack enterprise application, cloud migration, technical consultation, or a long-term engineering partner - I'd love to hear about your challenge.
+                Whether you need a full-stack enterprise application, cloud migration, technical consultation, or a long-term engineering partner -- I'd love to hear about your challenge.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4, marginBottom: 44 }}>
@@ -1787,7 +1832,7 @@ export default function Page() {
               </div>
             </div>
 
-            {/* RIGHT - form */}
+            {/* RIGHT -- form */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1851,8 +1896,8 @@ export default function Page() {
                     >
                       <option value="">Select a range...</option>
                       <option value="under-5k">Under $5,000</option>
-                      <option value="5k-15k">$5,000 - $15,000</option>
-                      <option value="15k-50k">$15,000 - $50,000</option>
+                      <option value="5k-15k">$5,000 -- $15,000</option>
+                      <option value="15k-50k">$15,000 -- $50,000</option>
                       <option value="50k+">$50,000+</option>
                       <option value="retainer">Ongoing / Retainer</option>
                     </select>
@@ -1912,14 +1957,17 @@ export default function Page() {
           borderBottom: `1px solid ${T.border}`,
           padding: 'clamp(40px,5vw,64px) clamp(20px,5vw,80px)',
         }}>
-          <div style={{
-            maxWidth: 1320, margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: 40,
-          }}>
+          <div
+            className="footer-grid"
+            style={{
+              maxWidth: 1320, margin: '0 auto',
+              display: 'grid',
+              gridTemplateColumns: '2fr 1fr 1fr',
+              gap: 40,
+            }}
+          >
             {/* Brand */}
-            <div style={{ gridColumn: 'span 2', minWidth: 0 }}>
+            <div className="footer-brand-col" style={{ minWidth: 0 }}>
               <a href="#top" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: 16 }}>
                 <span style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: 28, fontWeight: 800, color: T.text, letterSpacing: '-0.04em' }}>
                   Syed<span style={{ color: T.lime }}>.</span>
@@ -1953,6 +2001,9 @@ export default function Page() {
                 ))}
               </div>
             </div>
+
+            {/* Quick links + Contact wrapped for mobile 2-col layout */}
+            <div className="footer-links-row" style={{ display: 'contents' }}>
 
             {/* Quick links */}
             <div>
@@ -1997,6 +2048,8 @@ export default function Page() {
                 ))}
               </div>
             </div>
+
+            </div>{/* end footer-links-row */}
           </div>
         </div>
 
