@@ -1,5 +1,5 @@
 import './globals.css';
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 export const metadata = {
   title: 'Syed Dilawar - Senior .NET Full Stack Developer',
   description: 'Senior .NET Full Stack Developer with 8+ years of experience building scalable enterprise solutions, cloud applications, and custom software.',
