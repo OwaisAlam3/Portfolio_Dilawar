@@ -678,56 +678,39 @@ export default function Page() {
           .stat-item-3 { border-right: none !important; }
         }
 
-        @media (max-width: 900px) {
-          .desktop-only { display: none !important; }
-          .mobile-toggle { display: flex !important; }
+        /* ─── DESKTOP: show big portrait, hide mobile pill ─── */
+        .hero-photo-col   { display: flex; }
+        .hero-mobile-pill { display: none; }
 
-          /* ── HERO PHOTO: compact card on tablet ── */
-          .hero-photo-col {
-            display: flex !important;
-            flex: 0 0 auto !important;
-            width: 100% !important;
-            padding: 24px clamp(20px,5vw,48px) 0 !important;
-            justify-content: center !important;
-            align-items: flex-start !important;
-            min-height: unset !important;
-          }
-          /* hide glow blob and ALL floating badges on mobile */
-          .hero-photo-col > div:first-child { display: none !important; }
-          .hero-floating-badge { display: none !important; }
-          .hero-exp-badge { display: none !important; }
-          /* constrain the card itself */
-          .hero-photo-card {
-            max-width: 260px !important;
-            max-height: 346px !important;
-            width: 260px !important;
-            aspect-ratio: 3/4 !important;
-          }
+        /* ─── MOBILE (≤900px) ─── */
+        @media (max-width: 900px) {
+          .desktop-only   { display: none !important; }
+          .mobile-toggle  { display: flex !important; }
+
+          /* hide the tall desktop portrait entirely */
+          .hero-photo-col { display: none !important; }
+
+          /* show the compact inline pill */
+          .hero-mobile-pill { display: flex !important; }
+
           .hero-left-col {
             width: 100% !important;
-            padding: clamp(32px,5vh,56px) clamp(20px,5vw,48px) 20px !important;
+            padding: clamp(36px,6vh,64px) clamp(20px,5vw,48px) 28px !important;
           }
-          .hero-top-row {
-            flex-direction: column-reverse !important;
-          }
+          .hero-top-row { flex-direction: column !important; }
 
-          .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .stats-grid    { grid-template-columns: repeat(2, 1fr) !important; }
           .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .services-grid > * { border-radius: 16px !important; }
-          .process-grid { grid-template-columns: 1fr 1fr !important; }
+          .process-grid  { grid-template-columns: 1fr 1fr !important; }
           .process-grid > * { border-right: none !important; border-bottom: 1px solid ${T.border} !important; }
-          .exp-grid { grid-template-columns: 1fr !important; }
-          .test-grid { grid-template-columns: 1fr 1fr !important; }
+          .exp-grid      { grid-template-columns: 1fr !important; }
+          .test-grid     { grid-template-columns: 1fr 1fr !important; }
           .form-name-email { grid-template-columns: 1fr !important; }
 
-          /* ── FOOTER: stack all columns ── */
-          .footer-grid {
-            grid-template-columns: 1fr !important;
-          }
-          .footer-brand-col {
-            grid-column: span 1 !important;
-          }
-          /* nav + contact sit side-by-side inside a 2-col sub-grid */
+          /* footer stacks */
+          .footer-grid { grid-template-columns: 1fr !important; }
+          .footer-brand-col { grid-column: span 1 !important; }
           .footer-links-row {
             display: grid !important;
             grid-template-columns: 1fr 1fr !important;
@@ -741,32 +724,19 @@ export default function Page() {
 
         @media (max-width: 600px) {
           .services-grid { grid-template-columns: 1fr !important; }
-          .stats-grid { grid-template-columns: 1fr 1fr !important; }
-          .process-grid { grid-template-columns: 1fr !important; }
-          .test-grid { grid-template-columns: 1fr !important; }
-          .cta-email { display: none !important; }
-          /* even smaller photo on phones */
-          .hero-photo-card {
-            max-width: 220px !important;
-            width: 220px !important;
-          }
-          .hero-photo-col {
-            padding: 16px clamp(16px,4vw,32px) 0 !important;
-          }
-          /* footer nav+contact side by side on phones */
+          .stats-grid    { grid-template-columns: 1fr 1fr !important; }
+          .process-grid  { grid-template-columns: 1fr !important; }
+          .test-grid     { grid-template-columns: 1fr !important; }
+          .cta-email     { display: none !important; }
           .footer-links-row {
-            display: grid !important;
             grid-template-columns: 1fr 1fr !important;
-            gap: 32px !important;
           }
         }
 
         @media (max-width: 480px) {
           .form-name-email { grid-template-columns: 1fr !important; }
-          .trust-grid { grid-template-columns: 1fr !important; }
-          .footer-links-row {
-            grid-template-columns: 1fr !important;
-          }
+          .trust-grid      { grid-template-columns: 1fr !important; }
+          .footer-links-row { grid-template-columns: 1fr !important; }
         }
       `}</style>
 
@@ -962,11 +932,12 @@ export default function Page() {
               position: 'relative', zIndex: 2,
             }}
           >
-            {/* Available badge */}
+            {/* Available badge — desktop only */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.05, duration: 0.6 }}
+              className="desktop-only"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 36,
                 padding: '8px 16px', borderRadius: 100, width: 'fit-content',
@@ -981,6 +952,84 @@ export default function Page() {
               <span style={{ fontSize: 11, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.15em', textTransform: 'uppercase', color: T.lime }}>
                 Available · Remote Worldwide
               </span>
+            </motion.div>
+
+            {/* ── MOBILE IDENTITY PILL ──
+                Shows on mobile only: circular photo + name + title + available dot
+                Sits right above the headline, replacing the badge row            */}
+            <motion.div
+              className="hero-mobile-pill"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.05, duration: 0.6 }}
+              style={{
+                alignItems: 'center',
+                gap: 14,
+                marginBottom: 28,
+                padding: '10px 14px 10px 10px',
+                borderRadius: 100,
+                width: 'fit-content',
+                background: T.surface,
+                border: `1px solid ${T.border}`,
+              }}
+            >
+              {/* Circular photo */}
+              <div style={{
+                width: 52, height: 52, borderRadius: '50%', flexShrink: 0,
+                overflow: 'hidden',
+                border: `2px solid ${T.lime}40`,
+                position: 'relative',
+                background: T.card,
+              }}>
+                <Image
+                  src="/profile.jpg"
+                  alt="Syed Dilawar Hussain"
+                  fill
+                  sizes="52px"
+                  style={{ objectFit: 'cover', objectPosition: 'center 8%' }}
+                  priority
+                />
+              </div>
+
+              {/* Name + title */}
+              <div style={{ minWidth: 0 }}>
+                <div style={{
+                  fontSize: 13, fontWeight: 800, color: T.text,
+                  fontFamily: "'Bricolage Grotesque', sans-serif",
+                  letterSpacing: '-0.01em', lineHeight: 1.2,
+                  whiteSpace: 'nowrap',
+                }}>
+                  Syed Dilawar Hussain
+                </div>
+                <div style={{
+                  fontSize: 10, color: T.lime,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  letterSpacing: '0.1em', textTransform: 'uppercase',
+                  marginTop: 3, whiteSpace: 'nowrap',
+                }}>
+                  Senior .NET Developer
+                </div>
+              </div>
+
+              {/* Available dot */}
+              <div style={{
+                display: 'flex', alignItems: 'center', gap: 5,
+                padding: '4px 10px', borderRadius: 40, flexShrink: 0,
+                background: `${T.lime}12`, border: `1px solid ${T.lime}30`,
+              }}>
+                <div style={{
+                  width: 6, height: 6, borderRadius: '50%',
+                  background: T.lime, boxShadow: `0 0 8px ${T.lime}`,
+                  animation: 'glow-pulse 2s ease-in-out infinite',
+                }} />
+                <span style={{
+                  fontSize: 9, fontWeight: 700,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  letterSpacing: '0.12em', textTransform: 'uppercase', color: T.lime,
+                }}>
+                  Available
+                </span>
+              </div>
             </motion.div>
 
             {/* Headline */}
@@ -1047,7 +1096,7 @@ export default function Page() {
             </motion.div>
           </div>
 
-          {/* ── RIGHT COLUMN - editorial portrait card ── */}
+          {/* ── RIGHT COLUMN - editorial portrait card (desktop only) ── */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -1056,7 +1105,6 @@ export default function Page() {
             style={{
               flex: '0 0 clamp(280px, 33vw, 420px)',
               alignSelf: 'stretch',
-              display: 'flex',
               alignItems: 'center',
               justifyContent: 'flex-start',
               padding: '40px 0 80px 0',
@@ -1077,7 +1125,6 @@ export default function Page() {
               initial={{ opacity: 0, y: 24, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ delay: 0.5, duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-              className="hero-photo-card"
               style={{
                 position: 'relative', zIndex: 2,
                 width: '100%', maxWidth: 340,
@@ -1094,7 +1141,7 @@ export default function Page() {
                 src="/profile.jpg"
                 alt="Syed Dilawar Hussain"
                 fill
-                sizes="(max-width: 900px) 80vw, 340px"
+                sizes="(max-width: 900px) 0px, 340px"
                 style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
                 priority
               />
@@ -1157,7 +1204,6 @@ export default function Page() {
                 initial={{ opacity: 0, scale: 0.5, x: b.left ? -10 : 10 }}
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ delay: 0.9 + i * 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="hero-floating-badge"
                 style={{
                   position: 'absolute',
                   top: b.top,
@@ -1182,7 +1228,6 @@ export default function Page() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.4, duration: 0.6 }}
-              className="hero-exp-badge"
               style={{
                 position: 'absolute', bottom: '12%', left: '-4%', zIndex: 5,
                 display: 'flex', alignItems: 'center', gap: 10,
