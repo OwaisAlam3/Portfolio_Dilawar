@@ -122,7 +122,7 @@ const PROJECTS = [
   },
   {
     num: '04',
-    title: 'WordPress Built News & Media Website ',
+    title: 'WordPress Built News & Media Website',
     category: 'WordPress · Media · Publishing',
     impact: 'Live & scaling',
     desc: 'Full WordPress website built for a business news and media publication - Freedom Business Daily. Custom theme architecture, fast load times, SEO-first content structure, and a smooth editorial workflow for a growing team of writers and editors.',
@@ -316,7 +316,7 @@ function useFocusTrap(active, containerRef) {
       } else {
         if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
       }
-      if (e.key === 'Escape') { (containerRef.current?.querySelector("button"))?.click(); }
+      if (e.key === 'Escape') { (containerRef.current?.querySelector('button'))?.click(); }
     };
     document.addEventListener('keydown', handler);
     first?.focus();
@@ -376,10 +376,7 @@ function StatItem({ num, suffix, label, index }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.12, duration: 0.7 }}
-      style={{
-        padding: 'clamp(20px,3vw,36px) clamp(12px,2vw,28px)',
-        textAlign: 'center',
-      }}
+      style={{ padding: 'clamp(20px,3vw,36px) clamp(12px,2vw,28px)', textAlign: 'center' }}
       className={`stat-item stat-item-${index}`}
     >
       <div style={{
@@ -445,8 +442,8 @@ function Marquee() {
 export default function Page() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeProject, setActiveProject] = useState(null);
-  const [form,          setForm]          = useState({ name: '', email: '', budget: '', message: '' });
-  const [formStatus, setFormStatus] = useState("idle");
+  const [form, setForm] = useState({ name: '', email: '', budget: '', message: '' });
+  const [formStatus, setFormStatus] = useState('idle');
   const [isDesktop, setIsDesktop] = useState(null);
 
   const { dotX, dotY, ringX, ringY, hovered, setHovered, clicking, onLight } = useCursor();
@@ -489,10 +486,10 @@ export default function Page() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          name:    form.name,
-          email:   form.email,
-          budget:  form.budget,
-          message: form.message,
+          name:     form.name,
+          email:    form.email,
+          budget:   form.budget,
+          message:  form.message,
           _replyto: form.email,
           _subject: `New project inquiry from ${form.name}`,
         }),
@@ -548,19 +545,9 @@ export default function Page() {
         ::selection { background: ${T.lime}28; color: ${T.lime}; }
 
         @keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-33.333%) } }
-        .marquee-track {
-          display: flex;
-          width: max-content;
-          animation: marquee 40s linear infinite;
-        }
+        .marquee-track { display: flex; width: max-content; animation: marquee 40s linear infinite; }
         .marquee-track:hover { animation-play-state: paused; }
 
-        @keyframes float-y { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-        @keyframes orbit-spin-cw  { from{transform:rotate(0deg)}   to{transform:rotate(360deg)} }
-        @keyframes orbit-spin-ccw { from{transform:rotate(0deg)}   to{transform:rotate(-360deg)} }
-        @keyframes badge-float-0 { 0%,100%{margin-top:0px} 50%{margin-top:-6px} }
-        @keyframes badge-float-1 { 0%,100%{margin-top:0px} 50%{margin-top:-8px} }
-        @keyframes badge-float-2 { 0%,100%{margin-top:0px} 50%{margin-top:-5px} }
         @keyframes glow-pulse { 0%,100%{opacity:0.5} 50%{opacity:1} }
 
         .nav-link {
@@ -613,15 +600,9 @@ export default function Page() {
           transition: opacity 0.3s;
         }
         .btn-primary:hover::before { opacity: 0.12; }
-        .btn-primary:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 20px 50px ${T.lime}2e;
-        }
-        .btn-primary:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
-          transform: none;
-        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 20px 50px ${T.lime}2e; }
+        .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
         .btn-outline {
           display: inline-flex;
           align-items: center;
@@ -636,6 +617,44 @@ export default function Page() {
           transition: all 0.3s;
         }
         .btn-outline:hover { border-color: ${T.lime}55; color: ${T.lime}; }
+
+        .btn-cv {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 11px 22px;
+          border-radius: 10px;
+          background: ${T.lime}15;
+          border: 1px solid ${T.lime}35;
+          color: ${T.lime};
+          font-size: 13px;
+          font-weight: 700;
+          font-family: 'Bricolage Grotesque', sans-serif;
+          text-decoration: none;
+          letter-spacing: 0.01em;
+          transition: all 0.3s;
+          cursor: pointer;
+        }
+        .btn-cv:hover { background: ${T.lime}25; transform: translateY(-2px); }
+
+        .btn-email-ghost {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 11px 22px;
+          border-radius: 10px;
+          background: transparent;
+          border: 1px solid ${T.border};
+          color: ${T.muted};
+          font-size: 13px;
+          font-weight: 600;
+          font-family: 'Bricolage Grotesque', sans-serif;
+          text-decoration: none;
+          letter-spacing: 0.01em;
+          transition: all 0.3s;
+          cursor: pointer;
+        }
+        .btn-email-ghost:hover { border-color: ${T.lime}40; color: ${T.text}; transform: translateY(-2px); }
 
         .service-card { transition: background 0.4s, transform 0.4s, border-color 0.4s; }
         .service-card:hover { background: ${T.card} !important; transform: translateY(-4px); }
@@ -671,68 +690,45 @@ export default function Page() {
           .stat-item-2 { border-bottom: none !important; border-right: 1px solid ${T.border} !important; }
           .stat-item-3 { border-right: none !important; border-bottom: none !important; }
         }
-
         @media (max-width: 600px) {
           .stat-item   { border-right: 1px solid ${T.border}; }
           .stat-item-1 { border-right: none !important; }
           .stat-item-3 { border-right: none !important; }
         }
 
-        /* ─── DESKTOP: show big portrait, hide mobile pill ─── */
         .hero-photo-col   { display: flex; }
         .hero-mobile-pill { display: none; }
 
-        /* ─── MOBILE (≤900px) ─── */
         @media (max-width: 900px) {
-          .desktop-only   { display: none !important; }
-          .mobile-toggle  { display: flex !important; }
-
-          /* hide the tall desktop portrait entirely */
-          .hero-photo-col { display: none !important; }
-
-          /* show the compact inline pill */
+          .desktop-only    { display: none !important; }
+          .mobile-toggle   { display: flex !important; }
+          .hero-photo-col  { display: none !important; }
           .hero-mobile-pill { display: flex !important; }
-
-          .hero-left-col {
-            width: 100% !important;
-            padding: clamp(36px,6vh,64px) clamp(20px,5vw,48px) 28px !important;
-          }
-          .hero-top-row { flex-direction: column !important; }
-
-          .stats-grid    { grid-template-columns: repeat(2, 1fr) !important; }
-          .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .hero-left-col   { width: 100% !important; padding: clamp(36px,6vh,64px) clamp(20px,5vw,48px) 28px !important; }
+          .hero-top-row    { flex-direction: column !important; }
+          .stats-grid      { grid-template-columns: repeat(2, 1fr) !important; }
+          .services-grid   { grid-template-columns: repeat(2, 1fr) !important; }
           .services-grid > * { border-radius: 16px !important; }
-          .process-grid  { grid-template-columns: 1fr 1fr !important; }
+          .process-grid    { grid-template-columns: 1fr 1fr !important; }
           .process-grid > * { border-right: none !important; border-bottom: 1px solid ${T.border} !important; }
-          .exp-grid      { grid-template-columns: 1fr !important; }
-          .test-grid     { grid-template-columns: 1fr 1fr !important; }
+          .exp-grid        { grid-template-columns: 1fr !important; }
+          .test-grid       { grid-template-columns: 1fr 1fr !important; }
           .form-name-email { grid-template-columns: 1fr !important; }
-
-          /* footer stacks */
-          .footer-grid { grid-template-columns: 1fr !important; }
+          .footer-grid     { grid-template-columns: 1fr !important; }
           .footer-brand-col { grid-column: span 1 !important; }
-          .footer-links-row {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr !important;
-            gap: 32px !important;
-          }
+          .footer-links-row { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
         }
-
         @media (min-width: 901px) {
           .mobile-toggle { display: none !important; }
         }
-
         @media (max-width: 600px) {
           .services-grid { grid-template-columns: 1fr !important; }
           .stats-grid    { grid-template-columns: 1fr 1fr !important; }
           .process-grid  { grid-template-columns: 1fr !important; }
           .test-grid     { grid-template-columns: 1fr !important; }
           .cta-email     { display: none !important; }
-          .footer-links-row {
-            grid-template-columns: 1fr 1fr !important;
-          }
+          .footer-links-row { grid-template-columns: 1fr 1fr !important; }
         }
-
         @media (max-width: 480px) {
           .form-name-email { grid-template-columns: 1fr !important; }
           .trust-grid      { grid-template-columns: 1fr !important; }
@@ -810,11 +806,7 @@ export default function Page() {
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         }}>
           <a href="#top" style={{ textDecoration: 'none' }}>
-            <span style={{
-              fontFamily: "'Bricolage Grotesque', sans-serif",
-              fontSize: 20, fontWeight: 800,
-              color: T.text, letterSpacing: '-0.03em',
-            }}>
+            <span style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: 20, fontWeight: 800, color: T.text, letterSpacing: '-0.03em' }}>
               Syed<span style={{ color: T.lime }}>.</span>
             </span>
           </a>
@@ -847,10 +839,7 @@ export default function Page() {
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
-            style={{
-              background: 'none', border: 'none', cursor: 'pointer',
-              padding: 8, flexDirection: 'column', gap: 5, alignItems: 'flex-end',
-            }}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8, flexDirection: 'column', gap: 5, alignItems: 'flex-end' }}
           >
             <div style={{ width: 24, height: 2, background: T.text, transition: 'all 0.3s', transform: mobileOpen ? 'rotate(45deg) translate(5px,7px)' : 'none' }} />
             <div style={{ width: 16, height: 2, background: T.lime, transition: 'all 0.3s', opacity: mobileOpen ? 0 : 1 }} />
@@ -919,7 +908,6 @@ export default function Page() {
           overflow: 'hidden',
         }}
       >
-        {/* Top row: left content + right photo */}
         <div className="hero-top-row" style={{ display: 'flex', alignItems: 'stretch', flex: '1 1 auto' }}>
 
           {/* ── LEFT COLUMN ── */}
@@ -954,9 +942,7 @@ export default function Page() {
               </span>
             </motion.div>
 
-            {/* ── MOBILE IDENTITY PILL ──
-                Shows on mobile only: circular photo + name + title + available dot
-                Sits right above the headline, replacing the badge row            */}
+            {/* Mobile identity pill */}
             <motion.div
               className="hero-mobile-pill"
               initial={{ opacity: 0, y: 12 }}
@@ -973,7 +959,6 @@ export default function Page() {
                 border: `1px solid ${T.border}`,
               }}
             >
-              {/* Circular photo */}
               <div style={{
                 width: 52, height: 52, borderRadius: '50%', flexShrink: 0,
                 overflow: 'hidden',
@@ -990,43 +975,21 @@ export default function Page() {
                   priority
                 />
               </div>
-
-              {/* Name + title */}
               <div style={{ minWidth: 0 }}>
-                <div style={{
-                  fontSize: 13, fontWeight: 800, color: T.text,
-                  fontFamily: "'Bricolage Grotesque', sans-serif",
-                  letterSpacing: '-0.01em', lineHeight: 1.2,
-                  whiteSpace: 'nowrap',
-                }}>
+                <div style={{ fontSize: 13, fontWeight: 800, color: T.text, fontFamily: "'Bricolage Grotesque', sans-serif", letterSpacing: '-0.01em', lineHeight: 1.2, whiteSpace: 'nowrap' }}>
                   Syed Dilawar Hussain
                 </div>
-                <div style={{
-                  fontSize: 10, color: T.lime,
-                  fontFamily: "'JetBrains Mono', monospace",
-                  letterSpacing: '0.1em', textTransform: 'uppercase',
-                  marginTop: 3, whiteSpace: 'nowrap',
-                }}>
+                <div style={{ fontSize: 10, color: T.lime, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 3, whiteSpace: 'nowrap' }}>
                   Senior .NET Developer
                 </div>
               </div>
-
-              {/* Available dot */}
               <div style={{
                 display: 'flex', alignItems: 'center', gap: 5,
                 padding: '4px 10px', borderRadius: 40, flexShrink: 0,
                 background: `${T.lime}12`, border: `1px solid ${T.lime}30`,
               }}>
-                <div style={{
-                  width: 6, height: 6, borderRadius: '50%',
-                  background: T.lime, boxShadow: `0 0 8px ${T.lime}`,
-                  animation: 'glow-pulse 2s ease-in-out infinite',
-                }} />
-                <span style={{
-                  fontSize: 9, fontWeight: 700,
-                  fontFamily: "'JetBrains Mono', monospace",
-                  letterSpacing: '0.12em', textTransform: 'uppercase', color: T.lime,
-                }}>
+                <div style={{ width: 6, height: 6, borderRadius: '50%', background: T.lime, boxShadow: `0 0 8px ${T.lime}`, animation: 'glow-pulse 2s ease-in-out infinite' }} />
+                <span style={{ fontSize: 9, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.12em', textTransform: 'uppercase', color: T.lime }}>
                   Available
                 </span>
               </div>
@@ -1068,35 +1031,69 @@ export default function Page() {
               transition={{ delay: 0.55, duration: 0.7 }}
               style={{ fontSize: 17, color: T.muted, lineHeight: 1.8, marginBottom: 36, fontFamily: "'Bricolage Grotesque', sans-serif", maxWidth: 520, letterSpacing: '0.01em' }}
             >
-              I'm{' '}
+              I&apos;m{' '}
               <strong style={{ color: T.text, fontWeight: 700 }}>Syed Dilawar Hussain</strong>
-              {' '}, a senior developer who turns complex enterprise requirements into elegant, high-performance systems.
+              {', '}a senior developer who turns complex enterprise requirements into elegant, high-performance systems.
               C#, ASP.NET Core, Azure, React. 8+ years. 50+ delivered projects.
             </motion.p>
 
-            {/* CTAs */}
+            {/* Primary CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.68, duration: 0.6 }}
-              style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 48 }}
+              style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 16 }}
             >
-              <a href="#contact" className="btn-primary"
+              <a
+                href="#contact"
+                className="btn-primary"
                 style={{ padding: '15px 32px', borderRadius: 12, fontSize: 15, letterSpacing: '0.01em' }}
-                onMouseEnter={onEnter} onMouseLeave={onLeave}
+                onMouseEnter={onEnter}
+                onMouseLeave={onLeave}
               >
                 Start a Project ↗
               </a>
-              <a href="#work" className="btn-outline"
+              <a
+                href="#work"
+                className="btn-outline"
                 style={{ padding: '14px 28px', borderRadius: 12, fontSize: 15 }}
-                onMouseEnter={onEnter} onMouseLeave={onLeave}
+                onMouseEnter={onEnter}
+                onMouseLeave={onLeave}
               >
                 View Work
               </a>
             </motion.div>
+
+            {/* Secondary CTAs — Download CV + Email */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.78, duration: 0.6 }}
+              style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 48 }}
+            >
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-cv"
+                onMouseEnter={onEnter}
+                onMouseLeave={onLeave}
+              >
+                Download CV ↓
+              </a>
+              <a
+                href="mailto:zaidi.dilawar110@gmail.com"
+                className="btn-email-ghost"
+                onMouseEnter={onEnter}
+                onMouseLeave={onLeave}
+              >
+                Email Me
+              </a>
+            </motion.div>
+
           </div>
 
-          {/* ── RIGHT COLUMN - editorial portrait card (desktop only) ── */}
+          {/* ── RIGHT COLUMN - portrait card (desktop only) ── */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -1111,7 +1108,6 @@ export default function Page() {
               position: 'relative',
             }}
           >
-            {/* Glow blob */}
             <div style={{
               position: 'absolute', top: '50%', left: '50%',
               transform: 'translate(-50%, -50%)',
@@ -1120,7 +1116,6 @@ export default function Page() {
               pointerEvents: 'none', zIndex: 0,
             }} />
 
-            {/* Card */}
             <motion.div
               initial={{ opacity: 0, y: 24, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -1136,7 +1131,6 @@ export default function Page() {
                 aspectRatio: '3 / 4',
               }}
             >
-              {/* Photo */}
               <Image
                 src="/profile.jpg"
                 alt="Syed Dilawar Hussain"
@@ -1145,26 +1139,17 @@ export default function Page() {
                 style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
                 priority
               />
-
-              {/* Bottom gradient overlay */}
               <div style={{
                 position: 'absolute', inset: 0, zIndex: 2,
                 background: `linear-gradient(to top, rgba(4,4,10,0.92) 0%, rgba(4,4,10,0.3) 45%, transparent 70%)`,
               }} />
-
-              {/* Name + title inside card */}
-              <div style={{
-                position: 'absolute', bottom: 0, left: 0, right: 0,
-                zIndex: 3, padding: '24px 24px 20px',
-              }}>
+              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 3, padding: '24px 24px 20px' }}>
                 <div style={{ fontSize: 10, color: T.lime, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 6 }}>
                   Senior .NET Developer
                 </div>
                 <div style={{ fontSize: 20, fontWeight: 800, color: T.text, fontFamily: "'Bricolage Grotesque', sans-serif", letterSpacing: '-0.02em', lineHeight: 1.1 }}>
                   Syed Dilawar<br />Hussain
                 </div>
-
-                {/* Skill pills row */}
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 14 }}>
                   {['.NET 8', 'ASP.NET', 'Azure', 'React'].map((s, i) => (
                     <span key={i} style={{
@@ -1175,13 +1160,11 @@ export default function Page() {
                   ))}
                 </div>
               </div>
-
-              {/* Top-right availability badge */}
               <div style={{
                 position: 'absolute', top: 16, right: 16, zIndex: 3,
                 display: 'flex', alignItems: 'center', gap: 6,
                 padding: '6px 12px', borderRadius: 40,
-                background: `rgba(4,4,10,0.75)`,
+                background: 'rgba(4,4,10,0.75)',
                 backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
                 border: `1px solid ${T.lime}35`,
               }}>
@@ -1194,14 +1177,14 @@ export default function Page() {
 
             {/* Floating skill badges */}
             {[
-              { label: 'ASP.NET Core', icon: '◈', color: T.lime,      top: '15%', left: '-5%'  },
-              { label: 'Azure DevOps', icon: '☁', color: T.coral,    top: '33%', right: '-1%', left: undefined },
-              { label: 'SignalR',      icon: '⚡', color: T.cyan,    top: '57%', right: '-1%', left: undefined },
-              { label: 'SQL Server',   icon: '⊞', color: '#a78bfa', top: '72%', left: '-5%'  },
+              { label: 'ASP.NET Core', icon: '◈', color: T.lime,      top: '15%', left: '-5%', right: undefined },
+              { label: 'Azure DevOps', icon: '☁', color: T.coral,     top: '33%', left: undefined, right: '-1%' },
+              { label: 'SignalR',      icon: '⚡', color: T.cyan,     top: '57%', left: undefined, right: '-1%' },
+              { label: 'SQL Server',   icon: '⊞', color: '#a78bfa',  top: '72%', left: '-5%', right: undefined },
             ].map((b, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.5, x: b.left ? -10 : 10 }}
+                initial={{ opacity: 0, scale: 0.5, x: b.left !== undefined ? -10 : 10 }}
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ delay: 0.9 + i * 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 style={{
@@ -1223,7 +1206,6 @@ export default function Page() {
               </motion.div>
             ))}
 
-            {/* Years experience badge */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -1250,9 +1232,9 @@ export default function Page() {
               </div>
             </motion.div>
           </motion.div>
-        </div>{/* end top row */}
+        </div>
 
-        {/* Stats - full width bar */}
+        {/* Stats bar */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -1623,8 +1605,8 @@ export default function Page() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.7 }}
                 className="exp-card"
-                onMouseEnter={(e) => { (e.currentTarget).style.borderColor = exp.color + '40'; onEnter(); }}
-                onMouseLeave={(e) => { (e.currentTarget).style.borderColor = T.border; onLeave(); }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = exp.color + '40'; onEnter(); }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = T.border; onLeave(); }}
                 style={{
                   padding: '40px 32px', background: T.bg,
                   border: `1px solid ${T.border}`, borderRadius: 20,
@@ -1747,7 +1729,7 @@ export default function Page() {
               Ready to build something remarkable?
             </h2>
             <p style={{ fontSize: 16, color: 'rgba(4,4,10,0.55)', fontFamily: "'Bricolage Grotesque', sans-serif", lineHeight: 1.6 }}>
-              Let's discuss your project. I typically respond within 4 hours.
+              Let&apos;s discuss your project. I typically respond within 4 hours.
             </p>
           </div>
 
@@ -1765,7 +1747,7 @@ export default function Page() {
                 whiteSpace: 'nowrap',
               }}
             >
-              Let's Talk ↗
+              Let&apos;s Talk ↗
             </a>
             <a
               href="mailto:zaidi.dilawar110@gmail.com"
@@ -1809,11 +1791,9 @@ export default function Page() {
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px,1fr))', gap: 64, alignItems: 'start' }}>
-
-            {/* LEFT */}
             <div>
               <p style={{ fontSize: 17, color: T.muted, lineHeight: 1.85, marginBottom: 44, fontFamily: "'Bricolage Grotesque', sans-serif", maxWidth: 440, letterSpacing: '0.01em' }}>
-                Whether you need a full-stack enterprise application, cloud migration, technical consultation, or a long-term engineering partner - I'd love to hear about your challenge.
+                Whether you need a full-stack enterprise application, cloud migration, technical consultation, or a long-term engineering partner - I&apos;d love to hear about your challenge.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4, marginBottom: 44 }}>
@@ -1831,8 +1811,8 @@ export default function Page() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08 }}
-                    onMouseEnter={(e) => { (e.currentTarget).style.borderColor = T.lime + '40'; (e.currentTarget).style.transform = 'translateX(6px)'; onEnter(); }}
-                    onMouseLeave={(e) => { (e.currentTarget).style.borderColor = T.border; (e.currentTarget).style.transform = 'none'; onLeave(); }}
+                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = T.lime + '40'; e.currentTarget.style.transform = 'translateX(6px)'; onEnter(); }}
+                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = T.border; e.currentTarget.style.transform = 'none'; onLeave(); }}
                     style={{
                       display: 'flex', alignItems: 'center', gap: 16,
                       textDecoration: 'none', padding: '14px 18px',
@@ -1855,7 +1835,6 @@ export default function Page() {
                 ))}
               </div>
 
-              {/* Trust signals */}
               <div className="trust-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                 {[
                   { icon: '⚡', text: 'Responds in < 4 hours' },
@@ -1877,7 +1856,6 @@ export default function Page() {
               </div>
             </div>
 
-            {/* RIGHT - form */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1890,15 +1868,15 @@ export default function Page() {
                     Send a Message
                   </h3>
                   <p style={{ fontSize: 14, color: T.muted, fontFamily: "'Bricolage Grotesque', sans-serif", lineHeight: 1.6 }}>
-                    I'll get back to you within one business day.
+                    I&apos;ll get back to you within one business day.
                   </p>
                 </div>
 
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }} noValidate>
                   <div className="form-name-email" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                     {[
-                      { id: 'name',  label: 'Your Name', type: 'text',  placeholder: 'John Smith',        autocomplete: 'name' },
-                      { id: 'email', label: 'Email',     type: 'email', placeholder: 'john@company.com',  autocomplete: 'email' },
+                      { id: 'name',  label: 'Your Name', type: 'text',  placeholder: 'John Smith',       autocomplete: 'name' },
+                      { id: 'email', label: 'Email',     type: 'email', placeholder: 'john@company.com', autocomplete: 'email' },
                     ].map((f) => (
                       <div key={f.id}>
                         <label htmlFor={`field-${f.id}`} style={{
@@ -1997,21 +1975,11 @@ export default function Page() {
 
       {/* ── FOOTER ── */}
       <footer style={{ position: 'relative', zIndex: 1, background: T.bg, borderTop: `1px solid ${T.border}` }}>
-        {/* Top strip */}
-        <div style={{
-          borderBottom: `1px solid ${T.border}`,
-          padding: 'clamp(40px,5vw,64px) clamp(20px,5vw,80px)',
-        }}>
+        <div style={{ borderBottom: `1px solid ${T.border}`, padding: 'clamp(40px,5vw,64px) clamp(20px,5vw,80px)' }}>
           <div
             className="footer-grid"
-            style={{
-              maxWidth: 1320, margin: '0 auto',
-              display: 'grid',
-              gridTemplateColumns: '2fr 1fr 1fr',
-              gap: 40,
-            }}
+            style={{ maxWidth: 1320, margin: '0 auto', display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: 40 }}
           >
-            {/* Brand */}
             <div className="footer-brand-col" style={{ minWidth: 0 }}>
               <a href="#top" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: 16 }}>
                 <span style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: 28, fontWeight: 800, color: T.text, letterSpacing: '-0.04em' }}>
@@ -2021,12 +1989,11 @@ export default function Page() {
               <p style={{ fontSize: 14, color: T.muted, lineHeight: 1.8, maxWidth: 320, fontFamily: "'Bricolage Grotesque', sans-serif", marginBottom: 24 }}>
                 Senior .NET Full Stack Developer building enterprise-grade systems for clients across North America, Australia, and beyond.
               </p>
-              {/* Social links */}
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                 {[
-                  { label: 'in',  href: 'https://www.linkedin.com/in/dilawardeveloper/', title: 'LinkedIn' },
-                  { label: '✉',   href: 'mailto:zaidi.dilawar110@gmail.com',             title: 'Email' },
-                  { label: 'wa',  href: 'https://wa.me/923142103746',                    title: 'WhatsApp' },
+                  { label: 'in', href: 'https://www.linkedin.com/in/dilawardeveloper/', title: 'LinkedIn' },
+                  { label: '✉', href: 'mailto:zaidi.dilawar110@gmail.com',             title: 'Email' },
+                  { label: 'wa', href: 'https://wa.me/923142103746',                   title: 'WhatsApp' },
                 ].map((s, i) => (
                   <a
                     key={i} href={s.href} title={s.title}
@@ -2047,58 +2014,55 @@ export default function Page() {
               </div>
             </div>
 
-            {/* Quick links + Contact wrapped for mobile 2-col layout */}
             <div className="footer-links-row" style={{ display: 'contents' }}>
-
-            {/* Quick links */}
-            <div>
-              <div style={{ fontSize: 10, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.2em', textTransform: 'uppercase', color: T.lime, marginBottom: 20 }}>
-                Navigation
+              <div>
+                <div style={{ fontSize: 10, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.2em', textTransform: 'uppercase', color: T.lime, marginBottom: 20 }}>
+                  Navigation
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  {NAV_LINKS.map((n) => (
+                    <a
+                      key={n} href={`#${n.toLowerCase()}`}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = T.text; e.currentTarget.style.paddingLeft = '6px'; onEnter(); }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = T.muted; e.currentTarget.style.paddingLeft = '0px'; onLeave(); }}
+                      style={{ fontSize: 14, color: T.muted, textDecoration: 'none', fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 600, transition: 'all 0.2s' }}
+                    >{n}</a>
+                  ))}
+                </div>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                {NAV_LINKS.map((n) => (
-                  <a
-                    key={n} href={`#${n.toLowerCase()}`}
-                    onMouseEnter={(e) => { e.currentTarget.style.color = T.text; e.currentTarget.style.paddingLeft = '6px'; onEnter(); }}
-                    onMouseLeave={(e) => { e.currentTarget.style.color = T.muted; e.currentTarget.style.paddingLeft = '0px'; onLeave(); }}
-                    style={{ fontSize: 14, color: T.muted, textDecoration: 'none', fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 600, transition: 'all 0.2s' }}
-                  >{n}</a>
-                ))}
+
+              <div>
+                <div style={{ fontSize: 10, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.2em', textTransform: 'uppercase', color: T.lime, marginBottom: 20 }}>
+                  Contact
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                  {[
+                    { label: 'Email',    value: 'zaidi.dilawar110@gmail.com', href: 'mailto:zaidi.dilawar110@gmail.com' },
+                    { label: 'Phone',    value: '+92 314-2103746',             href: 'https://wa.me/923142103746' },
+                    { label: 'Location', value: 'Karachi, Pakistan',           href: null },
+                  ].map((c, i) => (
+                    <div key={i}>
+                      <div style={{ fontSize: 10, color: T.faint, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 3 }}>{c.label}</div>
+                      {c.href ? (
+                        <a
+                          href={c.href}
+                          target={c.href.startsWith('http') ? '_blank' : undefined}
+                          rel="noopener noreferrer"
+                          onMouseEnter={(e) => { e.currentTarget.style.color = T.lime; onEnter(); }}
+                          onMouseLeave={(e) => { e.currentTarget.style.color = T.text; onLeave(); }}
+                          style={{ fontSize: 13, color: T.text, textDecoration: 'none', fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 500, transition: 'color 0.2s', display: 'block' }}
+                        >{c.value}</a>
+                      ) : (
+                        <span style={{ fontSize: 13, color: T.text, fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 500 }}>{c.value}</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-
-            {/* Contact */}
-            <div>
-              <div style={{ fontSize: 10, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.2em', textTransform: 'uppercase', color: T.lime, marginBottom: 20 }}>
-                Contact
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-                {[
-                  { label: 'Email',    value: 'zaidi.dilawar110@gmail.com',  href: 'mailto:zaidi.dilawar110@gmail.com' },
-                  { label: 'Phone',    value: '+92 314-2103746',               href: 'https://wa.me/923142103746' },
-                  { label: 'Location', value: 'Karachi, Pakistan',             href: null },
-                ].map((c, i) => (
-                  <div key={i}>
-                    <div style={{ fontSize: 10, color: T.faint, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 3 }}>{c.label}</div>
-                    {c.href ? (
-                      <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"
-                        onMouseEnter={(e) => { e.currentTarget.style.color = T.lime; onEnter(); }}
-                        onMouseLeave={(e) => { e.currentTarget.style.color = T.text; onLeave(); }}
-                        style={{ fontSize: 13, color: T.text, textDecoration: 'none', fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 500, transition: 'color 0.2s', display: 'block' }}
-                      >{c.value}</a>
-                    ) : (
-                      <span style={{ fontSize: 13, color: T.text, fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 500 }}>{c.value}</span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            </div>{/* end footer-links-row */}
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div style={{ padding: '20px clamp(20px,5vw,80px)' }}>
           <div style={{ maxWidth: 1320, margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
             <p style={{ fontSize: 12, color: T.faint, fontFamily: "'JetBrains Mono', monospace" }}>
