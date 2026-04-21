@@ -926,7 +926,7 @@ export default function Page() {
               position: 'relative', zIndex: 2,
             }}
           >
-            {/* Available badge — desktop only */}
+            {/* Available badge - desktop only */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -1245,7 +1245,7 @@ export default function Page() {
       >
         <div style={{ maxWidth: 1320, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 80, alignItems: 'center' }}>
 
-          {/* LEFT — text */}
+          {/* LEFT - text */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -1269,7 +1269,7 @@ export default function Page() {
               I&apos;ve delivered enterprise-grade software for clients across the USA, Canada, Australia, and beyond.
             </p>
             <p style={{ fontSize: 16, color: T.muted, lineHeight: 1.9, marginBottom: 36, fontFamily: "'Bricolage Grotesque', sans-serif" }}>
-              I specialise in .NET, ASP.NET Core, Azure, and React — with a focus on
+              I specialise in .NET, ASP.NET Core, Azure, and React - with a focus on
               scalable architecture, clean code, and systems that actually hold up under real-world load.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
@@ -1296,7 +1296,7 @@ export default function Page() {
             </div>
           </motion.div>
 
-          {/* RIGHT — education card + skill tags */}
+          {/* RIGHT - education card + skill tags */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
