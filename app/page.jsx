@@ -23,7 +23,7 @@ const T = {
 /* ═══════════════════════════════════════════════════════
    DATA
 ═══════════════════════════════════════════════════════ */
-const NAV_LINKS = ['Services', 'Work', 'Process', 'Experience', 'Contact'];
+const NAV_LINKS = ['About', 'Services', 'Work', 'Process', 'Experience', 'Contact'];
 
 const STATS = [
   { num: 8,  suffix: '+', label: 'Years of\nExperience' },
@@ -223,6 +223,12 @@ const TESTIMONIALS = [
   },
 ];
 
+const SKILLS = [
+  'C# / .NET 8', 'ASP.NET Core', 'React', 'Next.js', 'TypeScript',
+  'Azure', 'SQL Server', 'PostgreSQL', 'Redis', 'Docker',
+  'SignalR', 'Entity Framework', 'REST APIs', 'CI/CD', 'WordPress', 'PHP',
+];
+
 /* ═══════════════════════════════════════════════════════
    HOOKS
 ═══════════════════════════════════════════════════════ */
@@ -285,7 +291,7 @@ function useCursor() {
 function useActiveSection() {
   const [active, setActive] = useState('');
   useEffect(() => {
-    const ids = ['home', 'services', 'work', 'process', 'experience', 'contact'];
+    const ids = ['home', 'about', 'services', 'work', 'process', 'experience', 'contact'];
     const observers = ids.map((id) => {
       const el = document.getElementById(id);
       if (!el) return null;
@@ -1254,6 +1260,115 @@ export default function Page() {
       <div style={{ position: 'relative', zIndex: 1 }}>
         <Marquee />
       </div>
+
+      {/* ════════════════════════════════
+          ABOUT
+      ════════════════════════════════ */}
+      <section
+        id="about"
+        style={{ position: 'relative', zIndex: 1, padding: 'clamp(80px,10vh,140px) clamp(20px,5vw,80px)' }}
+      >
+        <div style={{ maxWidth: 1320, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 80, alignItems: 'center' }}>
+
+          {/* LEFT — text */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <SectionEyebrow>About Me</SectionEyebrow>
+            <h2 style={{
+              fontFamily: "'Bricolage Grotesque', sans-serif",
+              fontSize: 'clamp(30px, 4vw, 56px)',
+              fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1.05,
+              color: T.text, marginBottom: 24,
+            }}>
+              I build systems<br />
+              <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic', fontWeight: 400, color: T.lime }}>
+                that mean business.
+              </span>
+            </h2>
+            <p style={{ fontSize: 16, color: T.muted, lineHeight: 1.9, marginBottom: 18, fontFamily: "'Bricolage Grotesque', sans-serif" }}>
+              With a Computer Science degree from Iqra University and 8+ years in the industry,
+              I&apos;ve delivered enterprise-grade software for clients across the USA, Canada, Australia, and beyond.
+            </p>
+            <p style={{ fontSize: 16, color: T.muted, lineHeight: 1.9, marginBottom: 36, fontFamily: "'Bricolage Grotesque', sans-serif" }}>
+              I specialise in .NET, ASP.NET Core, Azure, and React — with a focus on
+              scalable architecture, clean code, and systems that actually hold up under real-world load.
+            </p>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-cv"
+                onMouseEnter={onEnter}
+                onMouseLeave={onLeave}
+              >
+                Download CV ↓
+              </a>
+              <a
+                href="mailto:zaidi.dilawar110@gmail.com"
+                className="btn-email-ghost"
+                onMouseEnter={onEnter}
+                onMouseLeave={onLeave}
+              >
+                Email Me
+              </a>
+            </div>
+          </motion.div>
+
+          {/* RIGHT — education card + skill tags */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            {/* Education card */}
+            <div style={{
+              background: T.surface,
+              border: `1px solid ${T.border}`,
+              borderRadius: 16,
+              padding: 28,
+              marginBottom: 20,
+              position: 'relative',
+              overflow: 'hidden',
+            }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: `linear-gradient(90deg, ${T.lime}, ${T.cyan})` }} />
+              <div style={{ fontSize: 9, fontFamily: "'JetBrains Mono', monospace", color: T.lime, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 10 }}>
+                Education
+              </div>
+              <div style={{ fontSize: 19, fontWeight: 700, color: T.text, fontFamily: "'Bricolage Grotesque', sans-serif", marginBottom: 4, letterSpacing: '-0.02em' }}>
+                Bachelor of Computer Science
+              </div>
+              <div style={{ fontSize: 15, color: T.muted, fontFamily: "'Instrument Serif', serif", fontStyle: 'italic', marginBottom: 4 }}>
+                Iqra University
+              </div>
+              <div style={{ fontSize: 11, color: T.faint, fontFamily: "'JetBrains Mono', monospace" }}>
+                2017 – 2021 · CGPA: 3.1
+              </div>
+            </div>
+
+            {/* Skill tags */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+              {SKILLS.map((s, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.85 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.03 }}
+                >
+                  <Tag color={i % 3 === 0 ? T.lime : i % 3 === 1 ? T.cyan : T.coral}>{s}</Tag>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
 
       {/* ════════════════════════════════
           SERVICES
