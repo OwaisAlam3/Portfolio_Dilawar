@@ -1048,7 +1048,7 @@ export default function Page() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.68, duration: 0.6 }}
-              style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 16 }}
+              style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 48 }}
             >
               <a
                 href="#contact"
@@ -1070,32 +1070,7 @@ export default function Page() {
               </a>
             </motion.div>
 
-            {/* Secondary CTAs — Download CV + Email */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.78, duration: 0.6 }}
-              style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 48 }}
-            >
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-cv"
-                onMouseEnter={onEnter}
-                onMouseLeave={onLeave}
-              >
-                Download CV ↓
-              </a>
-              <a
-                href="mailto:zaidi.dilawar110@gmail.com"
-                className="btn-email-ghost"
-                onMouseEnter={onEnter}
-                onMouseLeave={onLeave}
-              >
-                Email Me
-              </a>
-            </motion.div>
+
 
           </div>
 
@@ -1299,7 +1274,7 @@ export default function Page() {
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <a
-                href="/resume.pdf"
+                href="/Dilawar_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-cv"
