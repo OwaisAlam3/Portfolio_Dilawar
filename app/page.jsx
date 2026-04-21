@@ -1284,7 +1284,9 @@ export default function Page() {
                 Download CV ↓
               </a>
               <a
-                href="mailto:zaidi.dilawar110@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&to=zaidi.dilawar110@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-email-ghost"
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
